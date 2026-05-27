@@ -1631,6 +1631,1681 @@ function toggleMobSocial(e) {
 }
 </script>
 
+  <script>
+    document.getElementById('voltbit-contact-form').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const form = this;
+      const btn = form.querySelector('[data-fs-submit-btn]');
+      const btnLabel = btn.querySelector('.btn-label');
+      const successBox = document.querySelector('[data-fs-success]');
+      const errorBox = document.querySelector('[data-fs-error]');
+
+      errorBox.style.display = 'none';
+      errorBox.textContent = '';
+      btn.disabled = true;
+      btnLabel.textContent = 'Sending…';
+
+      try {
+        const res = await fetch('https://formspree.io/f/mvzlnlov', {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (res.ok) {
+          form.style.display = 'none';
+          successBox.style.display = 'block';
+        } else {
+          const json = await res.json().catch(() => ({}));
+          const msg = (json.errors && json.errors.map(err => err.message).join(', ')) || 'Something went wrong. Please try again.';
+          errorBox.textContent = msg;
+          errorBox.style.display = 'block';
+          btn.disabled = false;
+          btnLabel.textContent = 'Send Message';
+        }
+      } catch (err) {
+        errorBox.textContent = 'Network error — please check your connection and try again.';
+        errorBox.style.display = 'block';
+        btn.disabled = false;
+        btnLabel.textContent = 'Send Message';
+      }
+    });
+  </script>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="color-scheme" content="dark"/>
+
+<!-- ═══ PRIMARY SEO ═══ -->
+<title>VOLTBIT Software | Software Development & Web Design in Lusaka, Zambia</title>
+<meta name="description" content="VOLTBIT Software builds professional software, websites, and automation solutions for businesses in Zambia and beyond. Based in Lusaka — fast, scalable, and reliable tech."/>
+<meta name="keywords" content="software development Zambia, web design Lusaka, app development Zambia, website design Zambia, IT company Lusaka, automation Zambia, VOLTBIT, tech company Zambia"/>
+<meta name="author" content="VOLTBIT Software"/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://voltbit.tech/"/>
+
+<!-- ═══ OPEN GRAPH (Facebook, WhatsApp, LinkedIn previews) ═══ -->
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://voltbit.tech/"/>
+<meta property="og:title" content="VOLTBIT Software | Software Development in Lusaka, Zambia"/>
+<meta property="og:description" content="Professional software development, web design, automation, and hosting solutions. Built for Zambian businesses that want to grow fast."/>
+<meta property="og:image" content="https://voltbit.tech/fav.png"/>
+<meta property="og:image:alt" content="VOLTBIT Software Logo"/>
+<meta property="og:site_name" content="VOLTBIT Software"/>
+<meta property="og:locale" content="en_ZM"/>
+
+<!-- ═══ TWITTER CARD ═══ -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="VOLTBIT Software | Software Development in Lusaka, Zambia"/>
+<meta name="twitter:description" content="Professional software development, web design, automation, and hosting solutions. Built for Zambian businesses that want to grow fast."/>
+<meta name="twitter:image" content="https://voltbit.tech/fav.png"/>
+
+<!-- ═══ GEO & LOCAL SEO ═══ -->
+<meta name="geo.region" content="ZM-09"/>
+<meta name="geo.placename" content="Lusaka, Zambia"/>
+<meta name="geo.position" content="-15.4167;28.2833"/>
+<meta name="ICBM" content="-15.4167, 28.2833"/>
+
+<!-- ═══ STRUCTURED DATA (Google Rich Results) ═══ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "VOLTBIT Software",
+  "url": "https://voltbit.tech",
+  "logo": "https://voltbit.tech/fav.png",
+  "image": "https://voltbit.tech/fav.png",
+  "description": "Professional software development, web design, automation, and hosting solutions for businesses in Zambia.",
+  "email": "voltbitsoftware@gmail.com",
+  "telephone": "+260979460277",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Lusaka",
+    "addressCountry": "ZM"
+  },
+  "areaServed": ["ZM", "Africa"],
+  "serviceType": ["Software Development", "Web Design", "Automation", "UI/UX Design", "Hosting"],
+  "priceRange": "$$",
+  "sameAs": [
+    "https://www.facebook.com/share/1TT94qsuXK/",
+    "https://instagram.com/voltbit1",
+    "https://www.tiktok.com/@voltbit.tech"
+  ]
+}
+</script>
+
+<!-- ═══ FAVICON ═══ -->
+<link rel="icon" type="image/png" sizes="32x32" href="fav.png"/>
+<link rel="icon" type="image/png" sizes="16x16" href="fav.png"/>
+<link rel="apple-touch-icon" href="fav.png"/>
+<meta name="msapplication-TileImage" content="fav.png"/>
+<link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&f[]=satoshi@300,400,500,700&display=swap" rel="stylesheet"/>
+<style>
+
+/* ══════════════════════════════════════
+   RESET
+══════════════════════════════════════ */
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Satoshi',sans-serif;
+  overflow-x:hidden;
+  background:
+    radial-gradient(circle at top right,rgba(34,211,238,.10),transparent 30%),
+    radial-gradient(circle at bottom left,rgba(15,118,110,.14),transparent 40%),
+    linear-gradient(145deg,#07151d,#081b25 45%,#0b2630);
+  background-attachment:fixed;
+  color:#fff;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{font-family:'Clash Display',sans-serif;}
+img{display:block;max-width:100%;}
+a{color:inherit;text-decoration:none;}
+
+/* ══════════════════════════════════════
+   TOKENS
+══════════════════════════════════════ */
+:root{
+  --teal:#0F766E;
+  --teal-mid:#178f86;
+  --cyan:#22D3EE;
+  --cyan-soft:#67E8F9;
+  --bg:#07151d;
+  --bg2:#0b2630;
+  --glass:rgba(255,255,255,.05);
+  --border:rgba(34,211,238,.18);
+  --border-subtle:rgba(34,211,238,.1);
+  --r:12px;--rl:18px;--rxl:28px;
+}
+
+/* ══════════════════════════════════════
+   PAGE SYSTEM
+══════════════════════════════════════ */
+.page{display:none !important;overflow:hidden;}
+.page.active{display:block !important;}
+
+/* ══════════════════════════════════════
+   CURSOR GLOW
+══════════════════════════════════════ */
+.cursor-glow{
+  position:fixed;width:320px;height:320px;border-radius:50%;
+  background:radial-gradient(circle,rgba(34,211,238,.09),transparent 70%);
+  transform:translate(-50%,-50%);pointer-events:none;z-index:0;
+  transition:left .08s,top .08s;
+}
+
+/* ══════════════════════════════════════
+   NAV
+══════════════════════════════════════ */
+.nav{
+  position:fixed;top:0;left:0;width:100%;height:76px;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:0 60px;
+  background:rgba(5,15,20,.75);
+  backdrop-filter:blur(24px);
+  border-bottom:1px solid rgba(34,211,238,.1);
+  z-index:1000;
+  transition:box-shadow .3s;
+}
+.nav.scrolled{box-shadow:0 4px 32px rgba(0,0,0,.4);}
+.nav-logo{display:flex;align-items:center;gap:4px;cursor:pointer;}
+.nav-wordmark{
+  font-family:'Clash Display',sans-serif;font-size:22px;font-weight:700;
+  background:linear-gradient(90deg,#fff,var(--cyan));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  letter-spacing:-.02em;
+}
+.nav-links{display:flex;gap:36px;list-style:none;}
+.nav-links a{
+  font-size:14px;font-weight:600;color:rgba(255,255,255,.65);
+  cursor:pointer;transition:color .2s;position:relative;padding-bottom:3px;
+}
+.nav-links a::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:2px;
+  background:var(--cyan);border-radius:2px;
+  transform:scaleX(0);transform-origin:left;transition:transform .25s;
+}
+.nav-links a:hover,.nav-links a.active{color:var(--cyan);}
+.nav-links a:hover::after,.nav-links a.active::after{transform:scaleX(1);}
+.nav-cta{
+  padding:10px 22px;border-radius:14px;border:none;
+  font-family:'Satoshi',sans-serif;font-weight:700;font-size:14px;cursor:pointer;
+  background:linear-gradient(135deg,var(--teal),var(--cyan));
+  color:#04141b;
+  box-shadow:0 0 24px rgba(34,211,238,.22);
+  transition:transform .2s,box-shadow .2s;
+}
+.nav-cta:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 0 40px rgba(34,211,238,.4);}
+.nav-hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;}
+.nav-hamburger span{display:block;width:22px;height:2px;background:var(--cyan);border-radius:2px;}
+
+/* mobile overlay */
+.mob-menu{
+  display:none;position:fixed;inset:0;z-index:2000;
+  background:rgba(5,15,20,.97);
+  flex-direction:column;align-items:center;justify-content:center;gap:30px;
+  backdrop-filter:blur(20px);
+}
+.mob-menu.open{display:flex;}
+.mob-menu a{font-family:'Clash Display',sans-serif;font-size:28px;font-weight:700;color:#fff;cursor:pointer;transition:color .2s;}
+.mob-menu a:hover{color:var(--cyan);}
+.mob-close{position:absolute;top:22px;right:24px;background:none;border:none;color:rgba(255,255,255,.4);font-size:34px;cursor:pointer;}
+
+/* bottom nav mobile */
+.bnav{
+  display:none;position:fixed;bottom:0;left:0;right:0;z-index:900;
+  background:rgba(5,15,20,.92);backdrop-filter:blur(20px);
+  border-top:1px solid rgba(34,211,238,.1);height:62px;
+  justify-content:space-around;align-items:center;
+}
+.bn{
+  display:flex;flex-direction:column;align-items:center;gap:3px;
+  cursor:pointer;color:rgba(255,255,255,.4);padding:5px 14px;border-radius:var(--r);
+  transition:color .2s,background .2s;
+}
+.bn.active{color:var(--cyan);background:rgba(34,211,238,.08);}
+.bn svg{width:20px;height:20px;}
+.bn span{font-size:9px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;}
+
+/* ══════════════════════════════════════
+   SHARED HELPERS
+══════════════════════════════════════ */
+.eyebrow{
+  display:inline-block;font-size:11px;font-weight:700;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--cyan);margin-bottom:12px;
+}
+.sec-h2{font-size:clamp(28px,3.2vw,46px);font-weight:700;line-height:1.08;letter-spacing:-.025em;color:#fff;margin-bottom:16px;}
+.sec-h2 em{color:var(--cyan);font-style:normal;}
+.sec-sub{font-size:16px;line-height:1.8;color:rgba(255,255,255,.55);max-width:520px;}
+.sec-sub.center{margin:0 auto;}
+.inner{max-width:1160px;margin:0 auto;}
+.sec{padding:100px 60px;}
+.sec.glass{background:rgba(255,255,255,.02);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);}
+.sec.dark-sec{background:rgba(0,0,0,.18);}
+
+/* buttons */
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:'Satoshi',sans-serif;font-size:14px;font-weight:700;
+  padding:13px 26px;border-radius:16px;border:none;cursor:pointer;
+  transition:transform .2s,box-shadow .2s,background .2s;white-space:nowrap;
+}
+.btn:hover{transform:translateY(-3px);}
+.btn-p{
+  background:linear-gradient(135deg,var(--teal),var(--cyan));
+  color:#04141b;box-shadow:0 0 28px rgba(34,211,238,.22);
+}
+.btn-p:hover{box-shadow:0 0 48px rgba(34,211,238,.42);}
+.btn-g{
+  background:rgba(255,255,255,.05);color:#fff;
+  border:1px solid rgba(34,211,238,.22);backdrop-filter:blur(14px);
+}
+.btn-g:hover{background:rgba(255,255,255,.09);border-color:rgba(34,211,238,.4);}
+.btn-o{background:transparent;color:var(--cyan);border:1.5px solid var(--cyan);}
+.btn-o:hover{background:rgba(34,211,238,.08);}
+.btn-c{
+  background:var(--cyan);color:#04141b;font-weight:700;
+  box-shadow:0 0 28px rgba(34,211,238,.22);
+}
+.btn-c:hover{box-shadow:0 0 48px rgba(34,211,238,.4);}
+.btn-full{width:100%;justify-content:center;}
+
+/* page hero (inner pages) */
+.page-hero{
+  padding:140px 60px 88px;
+  background:rgba(0,0,0,.15);
+  position:relative;overflow:hidden;
+  border-bottom:1px solid var(--border-subtle);
+}
+.page-hero::before{
+  content:'';position:absolute;inset:0;
+  background-image:linear-gradient(rgba(34,211,238,.03) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(34,211,238,.03) 1px,transparent 1px);
+  background-size:56px 56px;
+}
+.page-hero::after{
+  content:'';position:absolute;
+  width:600px;height:600px;border-radius:50%;
+  background:radial-gradient(circle,rgba(34,211,238,.07) 0%,transparent 70%);
+  top:-200px;right:-100px;pointer-events:none;
+}
+.ph-inner{max-width:1160px;margin:0 auto;position:relative;z-index:1;}
+.ph-h1{font-size:clamp(38px,5vw,64px);font-weight:700;color:#fff;line-height:1.08;letter-spacing:-.03em;margin-bottom:20px;}
+.ph-h1 em{color:var(--cyan);font-style:normal;}
+.ph-sub{font-size:17px;line-height:1.8;color:rgba(255,255,255,.5);max-width:540px;margin-bottom:32px;}
+
+/* CTA BOX */
+.cta-wrap{padding:80px 60px;}
+.cta-box{
+  max-width:1160px;margin:0 auto;
+  background:linear-gradient(145deg,rgba(34,211,238,.07),rgba(15,118,110,.16));
+  border:1px solid rgba(34,211,238,.2);
+  border-radius:40px;padding:80px;text-align:center;
+  position:relative;overflow:hidden;backdrop-filter:blur(20px);
+}
+.cta-box::before{
+  content:'';position:absolute;inset:0;
+  background-image:linear-gradient(rgba(34,211,238,.03) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(34,211,238,.03) 1px,transparent 1px);
+  background-size:52px 52px;
+}
+.cta-gl{position:absolute;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(15,118,110,.35) 0%,transparent 70%);left:-80px;bottom:-80px;}
+.cta-gr{position:absolute;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(34,211,238,.1) 0%,transparent 70%);right:-80px;top:-80px;}
+.cta-in{position:relative;z-index:1;max-width:560px;margin:0 auto;}
+.cta-h2{font-size:clamp(28px,4vw,50px);font-weight:700;color:#fff;line-height:1.1;letter-spacing:-.02em;margin-bottom:16px;}
+.cta-p{font-size:16px;line-height:1.75;color:rgba(255,255,255,.5);margin-bottom:38px;}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+
+/* FOOTER */
+.site-footer{padding:60px 60px 32px;border-top:1px solid rgba(34,211,238,.07);}
+.footer-g{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;padding-bottom:40px;margin-bottom:24px;}
+.fw{font-family:'Clash Display',sans-serif;font-size:22px;font-weight:700;cursor:pointer;background:linear-gradient(90deg,#fff,var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.footer-brand p{font-size:13px;line-height:1.7;margin-top:14px;color:rgba(255,255,255,.28);max-width:200px;}
+.fc h4{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:18px;}
+.fc ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
+.fc ul li{font-size:13px;color:rgba(255,255,255,.28);cursor:pointer;transition:color .2s;}
+.fc ul li:hover{color:var(--cyan);}
+.footer-bt{display:flex;justify-content:space-between;font-size:12px;color:rgba(255,255,255,.18);border-top:1px solid rgba(255,255,255,.06);padding-top:24px;margin-top:8px;}
+
+/* ══════════════════════════════════════
+   HOME PAGE — HERO
+══════════════════════════════════════ */
+.hero{
+  min-height:100vh;
+  display:grid;grid-template-columns:1fr 1fr;
+  align-items:center;
+  padding:100px 60px 60px;
+  position:relative;overflow:hidden;
+}
+/* particles */
+.particles span{
+  position:absolute;width:6px;height:6px;border-radius:50%;
+  background:var(--cyan);opacity:.6;
+  animation:floatParticle 12s linear infinite;
+}
+.particles span:nth-child(1){top:12%;left:18%;animation-delay:0s;}
+.particles span:nth-child(2){top:32%;left:72%;animation-delay:2s;}
+.particles span:nth-child(3){top:78%;left:48%;animation-delay:4s;}
+.particles span:nth-child(4){top:58%;left:8%;animation-delay:6s;}
+.particles span:nth-child(5){top:22%;left:88%;animation-delay:1s;}
+.particles span:nth-child(6){top:70%;left:82%;animation-delay:3s;}
+@keyframes floatParticle{
+  0%{transform:translateY(0);opacity:0;}
+  20%{opacity:.7;}
+  80%{opacity:.5;}
+  100%{transform:translateY(-130px);opacity:0;}
+}
+.hero-content{position:relative;z-index:2;}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:10px;
+  background:rgba(34,211,238,.08);border:1px solid rgba(34,211,238,.2);
+  color:var(--cyan-soft);padding:8px 18px;border-radius:100px;
+  font-size:12px;font-weight:600;letter-spacing:.06em;margin-bottom:26px;
+}
+.badge-dot{width:8px;height:8px;border-radius:50%;background:var(--cyan);animation:blink 2s infinite;}
+@keyframes blink{50%{opacity:.15;}}
+.hero-h1{
+  font-size:clamp(44px,5.5vw,78px);font-weight:700;line-height:1;
+  letter-spacing:-.03em;margin-bottom:22px;
+  background:linear-gradient(90deg,#fff,#c9faff,var(--cyan));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+}
+.hero-p{font-size:17px;line-height:1.8;color:rgba(255,255,255,.58);max-width:480px;margin-bottom:38px;}
+.hero-btns{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:56px;}
+
+/* metrics */
+.metrics{display:flex;gap:18px;flex-wrap:wrap;}
+.metric{
+  background:rgba(255,255,255,.04);border:1px solid rgba(34,211,238,.12);
+  backdrop-filter:blur(20px);padding:22px 26px;border-radius:24px;
+  min-width:150px;transition:.3s;
+}
+.metric:hover{transform:translateY(-8px);border-color:var(--cyan);box-shadow:0 0 40px rgba(34,211,238,.14);}
+.metric h3{font-family:'Clash Display',sans-serif;font-size:34px;color:var(--cyan);line-height:1;margin-bottom:6px;}
+.metric p{font-size:13px;color:rgba(255,255,255,.5);margin:0;}
+
+/* hero visual */
+.hero-visual{position:relative;min-height:640px;display:flex;justify-content:center;align-items:center;}
+/* orb */
+.orb{
+  width:300px;height:300px;border-radius:50%;
+  position:relative;display:flex;justify-content:center;align-items:center;
+  background:radial-gradient(circle,rgba(34,211,238,.16),rgba(15,118,110,.1));
+  box-shadow:0 0 120px rgba(34,211,238,.18);
+}
+.orb-inner{
+  width:80px;height:80px;border-radius:50%;
+  background:linear-gradient(135deg,var(--teal),var(--cyan));
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 0 40px rgba(34,211,238,.5);
+}
+.orb-inner svg{width:36px;height:36px;color:#fff;}
+.ring{
+  position:absolute;border-radius:50%;
+  border:1px solid rgba(34,211,238,.18);
+  animation:spin 14s linear infinite;
+}
+.ring.one{width:100%;height:100%;}
+.ring.two{width:420px;height:420px;border-style:dashed;animation-direction:reverse;animation-duration:24s;border-color:rgba(34,211,238,.12);}
+@keyframes spin{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
+/* tiles */
+.tile{
+  position:absolute;width:210px;padding:22px 24px;border-radius:24px;
+  background:rgba(255,255,255,.04);border:1px solid rgba(34,211,238,.14);
+  backdrop-filter:blur(18px);transition:.35s;
+}
+.tile:hover{transform:translateY(-10px);border-color:var(--cyan);box-shadow:0 0 40px rgba(34,211,238,.12);}
+.tile h4{font-family:'Clash Display',sans-serif;font-size:18px;margin-bottom:6px;}
+.tile p{margin:0;font-size:13px;color:rgba(255,255,255,.55);}
+.tile1{top:8%;left:-5%;animation:float 8s ease-in-out infinite;}
+.tile2{top:16%;right:-5%;animation:float 10s ease-in-out infinite;}
+.tile3{bottom:12%;left:0%;animation:float 9s ease-in-out infinite;}
+.tile4{bottom:6%;right:0%;animation:float 11s ease-in-out infinite;}
+@keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-18px);}}
+
+/* terminal */
+.terminal{
+  background:rgba(255,255,255,.04);border:1px solid rgba(34,211,238,.16);
+  border-radius:var(--rl);overflow:hidden;
+  box-shadow:0 0 60px rgba(34,211,238,.06);
+}
+.t-bar{background:rgba(34,211,238,.05);border-bottom:1px solid rgba(34,211,238,.1);padding:12px 18px;display:flex;align-items:center;gap:7px;}
+.d{width:10px;height:10px;border-radius:50%;}
+.dr{background:#ff5f57;}.dy{background:#febc2e;}.dg{background:#28c840;}
+.t-fname{margin-left:8px;font-size:12px;color:rgba(255,255,255,.3);}
+.t-body{padding:22px 24px 26px;font-family:'Courier New',monospace;font-size:13px;line-height:1.9;}
+.ck{color:#c792ea;}.cf{color:#82aaff;}.cs{color:var(--cyan);}.cv{color:rgba(255,255,255,.8);}.cc{color:rgba(34,211,238,.35);}.cp{color:#f78c6c;}
+.t-stats{display:grid;grid-template-columns:repeat(3,1fr);background:rgba(34,211,238,.04);border-top:1px solid rgba(34,211,238,.1);}
+.t-stat{padding:16px 18px;}
+.t-sn{font-family:'Clash Display',sans-serif;font-size:22px;font-weight:700;color:var(--cyan);line-height:1;margin-bottom:3px;}
+.t-sl{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.3);}
+
+/* about */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;}
+.stat-box{
+  background:rgba(255,255,255,.04);border:1px solid var(--border);
+  border-radius:var(--rxl);padding:40px 36px;backdrop-filter:blur(16px);
+}
+.stat-quote{font-size:15px;line-height:1.8;color:rgba(255,255,255,.6);font-style:italic;border-left:3px solid var(--cyan);padding-left:20px;margin-bottom:36px;}
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;text-align:center;}
+.stat-n{font-family:'Clash Display',sans-serif;font-size:28px;font-weight:700;color:var(--cyan);line-height:1;margin-bottom:4px;}
+.stat-l{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.35);}
+.checks{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:28px;}
+.check{display:flex;align-items:center;gap:10px;}
+.chk-ic{width:28px;height:28px;border-radius:50%;background:rgba(34,211,238,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.chk-ic svg{width:13px;height:13px;color:var(--cyan);}
+.check span{font-size:14px;font-weight:500;color:rgba(255,255,255,.8);}
+
+/* value rows */
+.val-row{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;margin-bottom:80px;}
+.val-row:last-child{margin-bottom:0;}
+.val-img{
+  border-radius:var(--rl);
+  background:rgba(255,255,255,.03);border:1px solid var(--border-subtle);
+  aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;
+}
+.val-icon{width:48px;height:48px;border-radius:var(--r);background:linear-gradient(135deg,var(--teal),var(--cyan));display:flex;align-items:center;justify-content:center;margin-bottom:18px;box-shadow:0 0 24px rgba(34,211,238,.2);}
+.val-icon svg{width:22px;height:22px;color:#fff;}
+.val-icon.alt{background:linear-gradient(135deg,#006877,#1a9b91);}
+.val-h3{font-size:28px;font-weight:700;margin-bottom:12px;}
+.val-p{font-size:15px;line-height:1.8;color:rgba(255,255,255,.55);margin-bottom:22px;}
+.val-bullets{list-style:none;display:flex;flex-direction:column;gap:10px;}
+.val-bullets li{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:600;color:var(--cyan);}
+.val-bullets li::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--cyan);flex-shrink:0;}
+
+/* services preview */
+.svc-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:48px;}
+.view-all{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:var(--cyan);border-bottom:1px solid var(--cyan);padding-bottom:1px;cursor:pointer;transition:opacity .2s;}
+.view-all:hover{opacity:.65;}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+.svc-card{
+  background:rgba(255,255,255,.04);border:1px solid rgba(34,211,238,.1);
+  border-radius:var(--rl);padding:30px 26px;position:relative;overflow:hidden;
+  transition:transform .25s,box-shadow .25s,border-color .25s;
+  backdrop-filter:blur(16px);
+}
+.svc-card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--teal),var(--cyan));transform:scaleX(0);transform-origin:left;transition:transform .3s;}
+.svc-card:hover{transform:translateY(-6px);box-shadow:0 0 40px rgba(34,211,238,.1);border-color:rgba(34,211,238,.3);}
+.svc-card:hover::after{transform:scaleX(1);}
+.svc-ic{width:48px;height:48px;border-radius:var(--r);background:linear-gradient(135deg,var(--teal),var(--cyan));display:flex;align-items:center;justify-content:center;margin-bottom:18px;box-shadow:0 0 20px rgba(34,211,238,.18);}
+.svc-ic svg{width:21px;height:21px;color:#fff;}
+.svc-h3{font-size:17px;font-weight:700;margin-bottom:9px;}
+.svc-p{font-size:13px;line-height:1.7;color:rgba(255,255,255,.55);margin-bottom:18px;}
+.lm{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:700;color:var(--cyan);cursor:pointer;}
+.lm svg{width:12px;height:12px;}
+
+/* ══════════════════════════════════════
+   SERVICES PAGE
+══════════════════════════════════════ */
+.big-svc-row{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;margin-bottom:80px;}
+.big-svc-row:last-child{margin-bottom:0;}
+.big-svc-row.flip{direction:rtl;}
+.big-svc-row.flip>*{direction:ltr;}
+.svc-vis{
+  border-radius:var(--rl);
+  background:rgba(255,255,255,.03);border:1px solid var(--border-subtle);
+  aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;
+  position:relative;overflow:hidden;
+}
+.svc-big-icon{width:52px;height:52px;border-radius:var(--r);background:linear-gradient(135deg,var(--teal),var(--cyan));display:flex;align-items:center;justify-content:center;margin-bottom:20px;box-shadow:0 0 24px rgba(34,211,238,.22);}
+.svc-big-icon svg{width:22px;height:22px;color:#fff;}
+.svc-big-icon.alt{background:linear-gradient(135deg,#006877,#1a9b91);}
+.svc-big-h2{font-size:30px;font-weight:700;margin-bottom:14px;}
+.svc-big-p{font-size:15px;line-height:1.8;color:rgba(255,255,255,.55);margin-bottom:24px;}
+.svc-checks{list-style:none;display:flex;flex-direction:column;gap:10px;}
+.svc-checks li{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:600;color:rgba(255,255,255,.8);}
+.svc-checks li::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--cyan);flex-shrink:0;}
+.small-svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+.hosting-band{
+  background:rgba(255,255,255,.03);border:1px solid var(--border);
+  border-radius:var(--rxl);padding:60px;display:flex;
+  justify-content:space-between;align-items:center;gap:40px;
+  backdrop-filter:blur(16px);
+}
+.hb-icon{width:52px;height:52px;border-radius:var(--r);background:rgba(34,211,238,.12);display:flex;align-items:center;justify-content:center;margin-bottom:20px;}
+.hb-icon svg{width:24px;height:24px;color:var(--cyan);}
+.hb-h2{font-size:28px;font-weight:700;margin-bottom:12px;}
+.hb-p{font-size:15px;line-height:1.75;color:rgba(255,255,255,.5);max-width:480px;margin-bottom:24px;}
+.hb-tags{display:flex;flex-wrap:wrap;gap:10px;}
+.hb-tag{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.6);padding:6px 14px;border-radius:100px;font-size:12px;font-weight:500;}
+
+/* ══════════════════════════════════════
+   PROCESS PAGE
+══════════════════════════════════════ */
+.process-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.step-card{
+  background:rgba(255,255,255,.04);border:1px solid rgba(34,211,238,.1);
+  border-radius:var(--rl);padding:36px 32px;
+  transition:transform .25s,box-shadow .25s,border-color .25s;
+  backdrop-filter:blur(16px);
+}
+.step-card:hover{transform:translateY(-6px);box-shadow:0 0 40px rgba(34,211,238,.1);border-color:rgba(34,211,238,.3);}
+.step-card.featured{background:linear-gradient(135deg,var(--teal),rgba(34,211,238,.3));border-color:var(--cyan);box-shadow:0 0 40px rgba(34,211,238,.14);}
+.step-num{font-family:'Clash Display',sans-serif;font-size:54px;font-weight:700;color:rgba(255,255,255,.07);line-height:1;margin-bottom:20px;letter-spacing:-.04em;}
+.step-card.featured .step-num{color:rgba(255,255,255,.14);}
+.step-icon{width:46px;height:46px;border-radius:var(--r);background:rgba(34,211,238,.12);display:flex;align-items:center;justify-content:center;margin-bottom:18px;}
+.step-card.featured .step-icon{background:rgba(255,255,255,.18);}
+.step-icon svg{width:20px;height:20px;color:var(--cyan);}
+.step-h3{font-size:19px;font-weight:700;margin-bottom:10px;}
+.step-p{font-size:14px;line-height:1.75;color:rgba(255,255,255,.5);}
+.step-card.featured .step-p{color:rgba(255,255,255,.7);}
+.process-timeline{display:none;flex-direction:column;gap:0;}
+.tl-item{display:flex;gap:20px;padding-bottom:40px;}
+.tl-item:last-child{padding-bottom:0;}
+.tl-left{display:flex;flex-direction:column;align-items:center;flex-shrink:0;}
+.tl-circle{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--teal),var(--cyan));display:flex;align-items:center;justify-content:center;color:#04141b;font-family:'Clash Display',sans-serif;font-size:16px;font-weight:700;}
+.tl-line{width:2px;flex:1;background:rgba(34,211,238,.18);margin-top:4px;}
+.tl-item:last-child .tl-line{display:none;}
+.tl-h3{font-size:17px;font-weight:700;margin-bottom:6px;}
+.tl-p{font-size:14px;line-height:1.7;color:rgba(255,255,255,.5);}
+.banner-img{
+  background:rgba(255,255,255,.03);border:1px solid var(--border-subtle);
+  border-radius:var(--rl);height:300px;display:flex;align-items:center;
+  position:relative;overflow:hidden;
+}
+.banner-img::before{
+  content:'';position:absolute;inset:0;
+  background-image:linear-gradient(rgba(34,211,238,.04) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(34,211,238,.04) 1px,transparent 1px);
+  background-size:48px 48px;
+}
+.banner-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(7,21,29,.9),rgba(7,21,29,.2));}
+.banner-content{position:relative;z-index:1;padding:60px;}
+.banner-quote{font-family:'Clash Display',sans-serif;font-size:28px;font-weight:700;color:#fff;line-height:1.25;max-width:480px;margin-bottom:12px;}
+.banner-sub{font-size:14px;color:rgba(255,255,255,.42);max-width:380px;line-height:1.7;}
+
+/* ══════════════════════════════════════
+   FAQ PAGE
+══════════════════════════════════════ */
+.faq-layout{display:grid;grid-template-columns:1fr 1.4fr;gap:80px;align-items:start;}
+.faq-promo{
+  background:rgba(255,255,255,.04);border:1px solid var(--border);
+  border-radius:var(--rl);padding:32px;margin-top:36px;
+  backdrop-filter:blur(16px);
+}
+.faq-promo h4{font-size:18px;font-weight:700;margin-bottom:10px;}
+.faq-promo p{font-size:14px;color:rgba(255,255,255,.45);line-height:1.65;margin-bottom:24px;}
+.faq-list{display:flex;flex-direction:column;gap:14px;}
+details{border:1px solid rgba(34,211,238,.12);border-radius:var(--rl);background:rgba(255,255,255,.03);overflow:hidden;transition:border-color .2s;backdrop-filter:blur(12px);}
+details[open]{border-color:rgba(34,211,238,.3);background:rgba(34,211,238,.04);}
+summary{list-style:none;display:flex;justify-content:space-between;align-items:center;padding:20px 24px;cursor:pointer;font-family:'Clash Display',sans-serif;font-size:16px;font-weight:600;color:#fff;gap:16px;}
+summary::-webkit-details-marker{display:none;}
+.sum-icon{width:28px;height:28px;border-radius:50%;background:rgba(34,211,238,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background .2s,transform .25s;}
+details[open] .sum-icon{background:var(--cyan);transform:rotate(45deg);}
+.sum-icon svg{width:14px;height:14px;color:var(--cyan);}
+details[open] .sum-icon svg{color:#04141b;}
+.faq-ans{padding:0 24px 20px;font-size:14px;line-height:1.8;color:rgba(255,255,255,.55);}
+.ind-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+.ind-card{background:rgba(255,255,255,.04);border:1px solid rgba(34,211,238,.1);border-radius:var(--rl);padding:28px 22px;transition:background .25s,border-color .25s,transform .25s;backdrop-filter:blur(16px);}
+.ind-card:hover{background:rgba(34,211,238,.06);border-color:rgba(34,211,238,.28);transform:translateY(-4px);}
+.ind-card.ind-cta{background:linear-gradient(135deg,var(--teal),rgba(34,211,238,.3));border-color:var(--cyan);cursor:pointer;}
+.ind-ic{width:44px;height:44px;border-radius:var(--r);background:rgba(34,211,238,.1);display:flex;align-items:center;justify-content:center;margin-bottom:16px;}
+.ind-card.ind-cta .ind-ic{background:rgba(255,255,255,.15);}
+.ind-ic svg{width:20px;height:20px;color:var(--cyan);}
+.ind-name{font-family:'Clash Display',sans-serif;font-size:15px;font-weight:700;color:#fff;margin-bottom:6px;}
+.ind-desc{font-size:12px;line-height:1.6;color:rgba(255,255,255,.42);}
+.ind-card.ind-cta .ind-desc{color:rgba(255,255,255,.7);}
+.ind-arrow{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:700;color:rgba(255,255,255,.55);margin-top:16px;}
+.ind-arrow svg{width:13px;height:13px;}
+.sec-sub {
+    margin-top: 40px; /* Adjust this value to get the desired gap */
+}
+
+/* ══════════════════════════════════════
+   CONTACT PAGE
+══════════════════════════════════════ */
+.contact-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:64px;align-items:start;}
+.form-card{background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:var(--rxl);padding:48px;backdrop-filter:blur(18px);}
+.form-title{font-size:26px;font-weight:700;margin-bottom:32px;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.fg{display:flex;flex-direction:column;gap:8px;margin-bottom:20px;}
+.fg label{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.38);}
+.fg input,.fg textarea,.fg select{
+  background:rgba(255,255,255,.05);border:1px solid rgba(34,211,238,.15);
+  border-radius:var(--r);padding:13px 16px;
+  font-family:'Satoshi',sans-serif;font-size:15px;color:#fff;outline:none;
+  transition:border-color .2s,box-shadow .2s;resize:none;
+}
+.fg input::placeholder,.fg textarea::placeholder{color:rgba(255,255,255,.28);}
+.fg input:focus,.fg textarea:focus,.fg select:focus{border-color:var(--cyan);box-shadow:0 0 0 3px rgba(34,211,238,.1);}
+.fg textarea{min-height:120px;}
+.fg select{
+  appearance:none;cursor:pointer;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none' viewBox='0 0 24 24'%3E%3Cpath stroke='%2367e8f9' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 14px center;
+}
+.fg select option{background:#0b2630;color:#fff;}
+.info-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(34,211,238,.08);border:1px solid var(--border);padding:6px 14px;border-radius:100px;font-size:11.5px;font-weight:600;color:var(--cyan);margin-bottom:20px;letter-spacing:.04em;}
+.info-h2{font-size:clamp(24px,2.5vw,34px);font-weight:700;margin-bottom:14px;line-height:1.15;}
+.info-p{font-size:15px;line-height:1.8;color:rgba(255,255,255,.52);margin-bottom:36px;}
+.contact-item{display:flex;align-items:center;gap:16px;padding:18px 20px;background:rgba(255,255,255,.04);border:1px solid rgba(34,211,238,.12);border-radius:var(--rl);margin-bottom:14px;cursor:pointer;transition:border-color .2s,transform .2s;backdrop-filter:blur(12px);}
+.contact-item:hover{border-color:rgba(34,211,238,.32);transform:translateX(4px);}
+.ci-icon{width:42px;height:42px;border-radius:var(--r);background:rgba(34,211,238,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.ci-icon svg{width:19px;height:19px;color:var(--cyan);}
+.ci-label{font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.35);margin-bottom:2px;}
+.ci-value{font-size:15px;font-weight:600;}
+.ci-arrow{margin-left:auto;flex-shrink:0;}
+.ci-arrow svg{width:16px;height:16px;color:rgba(255,255,255,.35);}
+.location-card{background:rgba(255,255,255,.04);border:1px solid rgba(34,211,238,.12);border-radius:var(--rl);padding:24px;margin-top:14px;display:flex;align-items:center;gap:14px;}
+.loc-ic{width:42px;height:42px;border-radius:var(--r);background:rgba(34,211,238,.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.loc-ic svg{width:19px;height:19px;color:var(--cyan);}
+.loc-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.35);margin-bottom:3px;}
+.loc-val{font-family:'Clash Display',sans-serif;font-size:16px;font-weight:700;}
+
+/* ══════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════ */
+@media(max-width:1000px){
+  .hero{grid-template-columns:1fr;gap:80px;}
+  .svc-grid{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:768px){
+  .nav{padding:0 20px;height:64px;}
+  .nav-links,.nav-cta{display:none;}
+  .nav-hamburger{display:flex;}
+  .bnav{display:none;}
+  body{padding-bottom:0;}
+  .hero{grid-template-columns:1fr;padding:80px 20px 64px;min-height:auto;gap:0;}
+  .hero-content{padding-top:24px;}
+  .hero-visual{display:none;}
+  .hero-btns{flex-direction:column;}
+  .metrics{gap:12px;}
+  .metric{min-width:calc(50% - 6px);padding:18px;}
+  .sec{padding:64px 20px;}
+  .cta-wrap{padding:48px 20px;}
+  .cta-box{padding:48px 24px;border-radius:var(--rl);}
+  .cta-btns{flex-direction:column;align-items:center;}
+  .site-footer{padding:48px 20px 24px;}
+  .footer-g{grid-template-columns:1fr;gap:28px;}
+  .footer-bt{flex-direction:column;gap:6px;text-align:center;}
+  .footer-brand{text-align:center;display:flex;flex-direction:column;align-items:center;}
+  .footer-brand p{max-width:280px;text-align:center;}
+  .fw{text-align:center;}
+  .fc{text-align:center;}
+  .fc ul{padding:0;list-style:none;}
+  .fc ul li{cursor:pointer;}
+  .social-icons{justify-content:center;}
+  .page-hero{padding:100px 20px 60px;}
+  .about-grid{grid-template-columns:1fr;gap:36px;}
+  .stats-row{grid-template-columns:repeat(2,1fr);gap:24px;}
+  .val-row{grid-template-columns:1fr;gap:32px;margin-bottom:56px;direction:ltr!important;}
+  .svc-head{flex-direction:column;gap:14px;align-items:flex-start;}
+  .svc-grid{grid-template-columns:1fr;}
+  .big-svc-row{grid-template-columns:1fr;gap:32px;margin-bottom:56px;direction:ltr!important;}
+  .small-svc-grid{grid-template-columns:1fr;}
+  .hosting-band{flex-direction:column;padding:36px 24px;border-radius:var(--rl);}
+  .process-grid{display:none;}
+  .process-timeline{display:flex;}
+  .banner-content{padding:36px 24px;}
+  .banner-quote{font-size:22px;}
+  .faq-layout{grid-template-columns:1fr;gap:40px;}
+  .ind-grid{grid-template-columns:1fr 1fr;gap:14px;}
+  .contact-grid{grid-template-columns:1fr;gap:40px;}
+  .form-card{padding:28px 20px;}
+  .form-row{grid-template-columns:1fr;}
+  .checks{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:480px){
+  .checks{grid-template-columns:1fr;}
+  .footer-g{grid-template-columns:1fr;gap:32px;}
+  .footer-brand{}
+  .fc{text-align:center;width:100%;padding-top:16px;}
+  .ind-grid{grid-template-columns:1fr;}
+  .footer-bt{font-size:11px;}
+}
+
+/* ── MOBILE CONNECT SOCIAL DROPDOWN ── */
+.mob-connect-wrap { width: 100%; }
+.mob-connect-btn {
+  width: 100%;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 28px;
+  font-family: 'Clash Display', sans-serif;
+  font-weight: 700;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  letter-spacing: -0.02em;
+  text-align: center;
+}
+
+.mob-social-drop {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: 14px;
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+  background: rgba(5,18,28,0.92);
+  border: 1px solid rgba(34,211,238,0.2);
+  border-radius: 18px;
+  overflow: hidden;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 8px 40px rgba(0,0,0,0.4), 0 0 0 1px rgba(34,211,238,0.06);
+  /* hidden state */
+  max-height: 0;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-8px) scaleY(0.96);
+  transform-origin: top center;
+  transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1),
+              opacity 0.3s ease,
+              transform 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+.mob-social-drop.open {
+  max-height: 400px;
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0) scaleY(1);
+}
+.mob-social-drop a {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 15px 22px;
+  color: rgba(255,255,255,0.72);
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(34,211,238,0.07);
+  transition: background 0.2s, color 0.2s, padding-left 0.2s;
+  /* stagger in */
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: background 0.2s, color 0.2s, padding-left 0.2s,
+              opacity 0.3s ease, transform 0.3s ease;
+}
+.mob-social-drop.open a { opacity: 1; transform: translateX(0); }
+.mob-social-drop.open a:nth-child(1) { transition-delay: 0.05s; }
+.mob-social-drop.open a:nth-child(2) { transition-delay: 0.10s; }
+.mob-social-drop.open a:nth-child(3) { transition-delay: 0.15s; }
+.mob-social-drop.open a:nth-child(4) { transition-delay: 0.20s; }
+.mob-social-drop.open a:nth-child(5) { transition-delay: 0.25s; }
+.mob-social-drop a:last-child { border-bottom: none; }
+.mob-social-drop a:active { background: rgba(34,211,238,0.1); padding-left: 28px; color: #22d3ee; }
+.mob-social-drop a i {
+  width: 32px; height: 32px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 50%;
+  background: rgba(34,211,238,0.1);
+  color: #22d3ee;
+  font-size: 14px;
+  flex-shrink: 0;
+  transition: background 0.2s, transform 0.2s;
+}
+.mob-social-drop a:active i { background: rgba(34,211,238,0.25); transform: scale(1.15); }
+.mob-connect-btn .mob-chev-line {
+  width: 22px; height: 2px;
+  background: rgba(34,211,238,0.6);
+  border-radius: 2px;
+  position: relative;
+  transition: background 0.2s;
+}
+.mob-connect-btn .mob-chev-line::before,
+.mob-connect-btn .mob-chev-line::after {
+  content: '';
+  position: absolute;
+  width: 11px; height: 2px;
+  background: rgba(34,211,238,0.6);
+  border-radius: 2px;
+  top: 0;
+  transition: transform 0.3s cubic-bezier(0.4,0,0.2,1), background 0.2s;
+}
+.mob-connect-btn .mob-chev-line::before { right: 0; transform: rotate(35deg) translateY(-3px); }
+.mob-connect-btn .mob-chev-line::after  { left: 0;  transform: rotate(-35deg) translateY(-3px); }
+.mob-connect-btn.open .mob-chev-line::before { transform: rotate(-35deg) translateY(-3px); }
+.mob-connect-btn.open .mob-chev-line::after  { transform: rotate(35deg) translateY(-3px); }
+
+
+/* ── FORMSPREE STATES ── */
+.fs-success { display: none; }
+.fs-success-inner {
+  text-align: center;
+  padding: 48px 24px;
+  display: flex; flex-direction: column; align-items: center; gap: 14px;
+}
+.fs-success-inner svg { animation: popIn 0.4s cubic-bezier(0.34,1.56,0.64,1) both; }
+@keyframes popIn { from { transform: scale(0); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+.fs-success-inner h4 {
+  font-family: 'Clash Display', sans-serif; font-size: 24px; font-weight: 700; color: #fff; margin: 0;
+}
+.fs-success-inner p { color: rgba(255,255,255,0.55); font-size: 15px; margin: 0; }
+.fs-global-error {
+  background: rgba(239,68,68,0.08); border: 1px solid rgba(239,68,68,0.3);
+  border-radius: 10px; padding: 12px 16px; margin-bottom: 16px;
+  color: #fca5a5; font-size: 14px;
+}
+.fs-field-error {
+  display: block; font-size: 12px; color: #fca5a5;
+  margin-top: 4px; min-height: 16px;
+}
+input[aria-invalid="true"], select[aria-invalid="true"], textarea[aria-invalid="true"] {
+  border-color: rgba(239,68,68,0.6) !important;
+  box-shadow: 0 0 0 3px rgba(239,68,68,0.12) !important;
+}
+button[data-fs-submit-btn]:disabled {
+  opacity: 0.6; cursor: not-allowed; pointer-events: none;
+}
+
+
+/* Force consistent colors across all browsers */
+:root { color-scheme: dark; }
+* { -webkit-tap-highlight-color: transparent; }
+
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+
+
+<style id="voltbit-social-final">
+
+.contact-dropdown{
+  position:relative;
+  display:flex;
+  align-items:center;
+}
+
+.contact-dropdown > a{
+  font-size:14px;
+  font-weight:600;
+  color:rgba(255,255,255,.65);
+
+  cursor:pointer;
+
+  transition:color .2s;
+
+  position:relative;
+
+  padding-bottom:3px;
+
+  display:flex;
+  align-items:center;
+}
+
+.contact-dropdown > a::after{
+  content:'';
+  position:absolute;
+  bottom:0;
+  left:0;
+  right:0;
+  height:2px;
+
+  background:var(--cyan);
+
+  border-radius:2px;
+
+  transform:scaleX(0);
+  transform-origin:left;
+
+  transition:transform .25s;
+}
+
+.contact-dropdown:hover > a{
+  color:var(--cyan);
+}
+
+.contact-dropdown:hover > a::after{
+  transform:scaleX(1);
+}
+
+/* DROPDOWN MENU */
+.contact-dropdown-menu{
+  position:absolute;
+
+  top:100%;
+  left:50%;
+
+  transform:translateX(-50%) translateY(10px);
+
+  background:rgba(5,15,20,.97);
+
+  border:1px solid rgba(34,211,238,.18);
+
+  border-radius:18px;
+
+  padding:14px 16px;
+
+  backdrop-filter:blur(20px);
+
+  box-shadow:
+    0 12px 40px rgba(0,0,0,.35),
+    0 0 24px rgba(34,211,238,.08);
+
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+
+  transition:
+    opacity .22s ease,
+    transform .22s ease,
+    visibility .22s ease;
+
+  z-index:3000;
+}
+
+/* invisible hover bridge */
+.contact-dropdown-menu::before{
+  content:'';
+
+  position:absolute;
+
+  top:-18px;
+  left:0;
+  right:0;
+
+  height:18px;
+}
+
+/* SHOW MENU */
+.contact-dropdown:hover .contact-dropdown-menu,
+.contact-dropdown:focus-within .contact-dropdown-menu{
+  opacity:1;
+  visibility:visible;
+  pointer-events:auto;
+
+  transform:translateX(-50%) translateY(0);
+}
+
+/* ICON ROW */
+.social-icons{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  gap:12px;
+
+  flex-wrap:nowrap;
+}
+
+/* ICON BUTTONS */
+.social-icons a{
+  width:42px;
+  height:42px;
+
+  border-radius:12px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background:rgba(255,255,255,.05);
+
+  border:1px solid rgba(34,211,238,.18);
+
+  color:var(--cyan);
+
+  transition:
+    transform .25s ease,
+    background .25s ease,
+    border-color .25s ease,
+    box-shadow .25s ease,
+    color .25s ease;
+}
+
+/* ICON HOVER */
+.social-icons a:hover{
+  transform:translateY(-3px);
+
+  background:rgba(34,211,238,.08);
+
+  border-color:rgba(34,211,238,.35);
+
+  box-shadow:
+    0 0 24px rgba(34,211,238,.18),
+    0 0 48px rgba(34,211,238,.08);
+
+  color:#67E8F9;
+}
+
+/* ICON SIZE */
+.social-icons i{
+  font-size:18px;
+}
+
+/* FOOTER LOGO */
+.footer-brand .fw img{
+  max-height:48px;
+  width:auto;
+}
+
+/* FOOTER SOCIALS */
+.fc .social-icons{
+  margin-top:4px;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+  .contact-dropdown{
+    height:auto;
+  }
+
+  .contact-dropdown-menu{
+    left:auto;
+    right:0;
+
+    transform:translateY(10px);
+  }
+
+  .contact-dropdown:hover .contact-dropdown-menu,
+  .contact-dropdown:focus-within .contact-dropdown-menu{
+    transform:translateY(0);
+  }
+
+  .social-icons{
+    gap:10px;
+  }
+
+  .social-icons a{
+    width:40px;
+    height:40px;
+  }
+}
+
+</style>
+
+
+</head>
+<body>
+
+<!-- CURSOR GLOW -->
+<div class="cursor-glow" id="cursorGlow"></div>
+
+<!-- NAV -->
+<header class="nav" id="mainNav">
+  <div class="nav-logo" onclick="goTo('home')">
+  <a href="#" class="nav-logo">
+    <img src="/voltbit-logo.png" style="height: 60px; width: auto;" alt="VOLTBIT Logo">
+</a>
+  </div>
+  <ul class="nav-links">
+    <li><a data-page="home" onclick="goTo('home')">Home</a></li>
+    <li><a data-page="services" onclick="goTo('services')">Services</a></li>
+    <li><a data-page="process" onclick="goTo('process')">Process</a></li>
+    <li><a data-page="faq" onclick="goTo('faq')">FAQ</a></li>
+    <li><div class="contact-dropdown"><a data-page="contact" onclick="goTo('contact')">Connect</a><div class="contact-dropdown-menu">
+<div class="social-icons">
+  <a href="https://www.tiktok.com/@voltbit.tech?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+  <a href="https://instagram.com/voltbit1" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+  <a href="https://www.facebook.com/share/1TT94qsuXK/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+  <a href="https://wa.me/260979460277" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+  <a href="mailto:voltbitsoftware@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+</div>
+</div></div></li>
+  </ul>
+  <button class="nav-cta magnetic" onclick="goTo('contact')">Get a Quote</button>
+  <button class="nav-hamburger" id="hbg" aria-label="Menu"><span></span><span></span><span></span></button>
+</header>
+
+<div class="mob-menu" id="mob">
+  <button class="mob-close" id="mclose">&#215;</button>
+  <a onclick="goTo('home');closeMob()">Home</a>
+  <a onclick="goTo('services');closeMob()">Services</a>
+  <a onclick="goTo('process');closeMob()">Process</a>
+  <a onclick="goTo('faq');closeMob()">FAQ</a>
+  <div class="mob-connect-wrap">
+    <button class="mob-connect-btn" onclick="toggleMobSocial(event)">
+      Connect
+      <span class="mob-chev-line"></span>
+    </button>
+    <div class="mob-social-drop" id="mobSocialDrop">
+      <a href="https://www.tiktok.com/@voltbit.tech?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener noreferrer" onclick="closeMob()"><i class="fab fa-tiktok"></i> TikTok</a>
+      <a href="https://instagram.com/voltbit1" target="_blank" rel="noopener noreferrer" onclick="closeMob()"><i class="fab fa-instagram"></i> Instagram</a>
+      <a href="https://www.facebook.com/share/1TT94qsuXK/" target="_blank" rel="noopener noreferrer" onclick="closeMob()"><i class="fab fa-facebook-f"></i> Facebook</a>
+      <a href="https://wa.me/260979460277" target="_blank" rel="noopener noreferrer" onclick="closeMob()"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+      <a href="mailto:voltbitsoftware@gmail.com" onclick="closeMob()"><i class="fas fa-envelope"></i> Email</a>
+    </div>
+  </div>
+  <button class="btn btn-p magnetic" onclick="goTo('contact');closeMob()" style="margin-top:8px;">Get a Quote</button>
+</div>
+
+<!-- ═══════════════════════════════
+     PAGE: HOME
+═══════════════════════════════ -->
+<div class="page active" id="page-home">
+
+  <section class="hero">
+    <div class="particles">
+      <span></span><span></span><span></span>
+      <span></span><span></span><span></span>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-badge"><div class="badge-dot"></div>Next-Gen Software Engineering · Lusaka, Zambia</div>
+      <h1 class="hero-h1">Where Code<br>Builds Power</h1>
+      <p class="hero-p">VOLTBIT builds simple, powerful, and reliable digital solutions — custom web applications, websites, automation, and business systems for companies that want to grow.</p>
+      <div class="hero-btns">
+        <button class="btn btn-p magnetic" onclick="goTo('services')">
+          <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          View Our Services
+        </button>
+        <button class="btn btn-g" onclick="goTo('process')">
+          Our Process
+          <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </button>
+      </div>
+      <div class="metrics">
+        <div class="metric"><h3>99.9%</h3><p>System Uptime</p></div>
+        <div class="metric"><h3>24/7</h3><p>Support</p></div>
+        <div class="metric"><h3>System</h3><p>Automation</p></div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="tile tile1"><h4>Cloud Systems</h4><p>Distributed infrastructure solutions.</p></div>
+      <div class="tile tile2"><h4>Business Automation</h4><p>Intelligent automated workflows.</p></div>
+      <div class="tile tile3"><h4>Cyber Security</h4><p>Enterprise-grade protection systems.</p></div>
+      <div class="tile tile4"><h4>Modern UX</h4><p>Premium digital experiences.</p></div>
+      <div class="orb">
+        <div class="ring one"></div>
+        <div class="ring two"></div>
+        <div class="orb-inner">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO WE ARE -->
+  <section class="sec glass">
+    <div class="inner">
+      <div class="about-grid">
+        <div class="stat-box">
+          <p class="stat-quote">VOLTBIT is a software development firm dedicated to engineering excellence. Our mission is to empower businesses by transforming complex challenges into robust, secure, and lightning-fast digital realities.</p>
+          <div class="stats-row">
+            <div><div class="stat-n">250+</div><div class="stat-l">Projects Delivered</div></div>
+  
+            <div><div class="stat-n">99.9%</div><div class="stat-l">Uptime Record</div></div>
+            <div><div class="stat-n">48</div><div class="stat-l">Core Architects</div></div>
+          </div>
+        </div>
+        <div>
+          <span class="eyebrow">Who We Are</span>
+          <h2 class="sec-h2">Practical digital products that solve <em>real challenges</em></h2>
+          <p class="sec-sub">VOLTBIT designs and develops custom web applications, websites, and business systems that help companies streamline operations, improve customer experiences, and grow online.</p>
+          <div class="checks">
+            <div class="check"><div class="chk-ic"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></div><span>Secure &amp; Fast</span></div>
+            <div class="check"><div class="chk-ic"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></div><span>Custom Built</span></div>
+            <div class="check"><div class="chk-ic"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></div><span>Scalable Solutions</span></div>
+            <div class="check"><div class="chk-ic"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></div><span>End-to-End Delivery</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUE PROPS -->
+  <section class="sec">
+    <div class="inner">
+      <div class="val-row">
+        <div class="val-img">
+          <svg width="220" height="150" viewBox="0 0 220 150" fill="none" opacity=".9"><rect x="20" y="20" width="180" height="110" rx="8" stroke="rgba(34,211,238,.28)" stroke-width="1.5"/><rect x="34" y="34" width="64" height="9" rx="3" fill="rgba(34,211,238,.14)"/><rect x="34" y="49" width="44" height="7" rx="2" fill="rgba(34,211,238,.08)"/><line x1="34" y1="68" x2="186" y2="68" stroke="rgba(34,211,238,.1)" stroke-width="1"/><circle cx="58" cy="96" r="16" stroke="rgba(34,211,238,.38)" stroke-width="1.5" fill="rgba(34,211,238,.05)"/><path d="M52 96l4 4 8-8" stroke="#22D3EE" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><rect x="88" y="84" width="88" height="9" rx="3" fill="rgba(34,211,238,.1)"/><rect x="88" y="99" width="60" height="7" rx="2" fill="rgba(34,211,238,.06)"/></svg>
+        </div>
+        <div>
+          <div class="val-icon"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg></div>
+          <h3 class="val-h3">Secure &amp; Fast</h3>
+          <p class="val-p">We prioritize security and performance in every line of code. Industry-leading encryption and edge-latency optimization ensure your mission-critical applications are prepared for tomorrow's scale.</p>
+          <ul class="val-bullets"><li>Zero-Trust Architecture</li><li>Edge-Latency Optimization</li></ul>
+        </div>
+      </div>
+      <div class="val-row" style="direction:rtl;">
+        <div class="val-img" style="direction:ltr;">
+          <svg width="220" height="150" viewBox="0 0 220 150" fill="none" opacity=".9"><rect x="10" y="10" width="200" height="130" rx="6" stroke="rgba(34,211,238,.14)" stroke-width="1"/><line x1="10" y1="38" x2="210" y2="38" stroke="rgba(34,211,238,.07)" stroke-width="1"/><line x1="10" y1="66" x2="210" y2="66" stroke="rgba(34,211,238,.07)" stroke-width="1"/><line x1="55" y1="10" x2="55" y2="140" stroke="rgba(34,211,238,.07)" stroke-width="1"/><line x1="110" y1="10" x2="110" y2="140" stroke="rgba(34,211,238,.07)" stroke-width="1"/><line x1="165" y1="10" x2="165" y2="140" stroke="rgba(34,211,238,.07)" stroke-width="1"/><rect x="22" y="18" width="40" height="24" rx="3" stroke="rgba(34,211,238,.48)" stroke-width="1.5" fill="rgba(34,211,238,.05)"/><text x="42" y="33" font-size="8" fill="rgba(34,211,238,.55)" text-anchor="middle" font-family="monospace">API</text><rect x="90" y="18" width="40" height="24" rx="3" stroke="rgba(34,211,238,.48)" stroke-width="1.5" fill="rgba(34,211,238,.05)"/><text x="110" y="33" font-size="8" fill="rgba(34,211,238,.55)" text-anchor="middle" font-family="monospace">DB</text><rect x="155" y="18" width="40" height="24" rx="3" stroke="rgba(34,211,238,.48)" stroke-width="1.5" fill="rgba(34,211,238,.05)"/><text x="175" y="33" font-size="7" fill="rgba(34,211,238,.55)" text-anchor="middle" font-family="monospace">AUTH</text><path d="M62 30 L90 30" stroke="rgba(34,211,238,.38)" stroke-width="1" stroke-dasharray="3 2"/><path d="M130 30 L155 30" stroke="rgba(34,211,238,.38)" stroke-width="1" stroke-dasharray="3 2"/><rect x="22" y="100" width="176" height="26" rx="3" stroke="rgba(34,211,238,.28)" stroke-width="1" fill="rgba(34,211,238,.04)"/><text x="110" y="116" font-size="8" fill="rgba(34,211,238,.45)" text-anchor="middle" font-family="monospace">CUSTOM ARCHITECTURE</text></svg>
+        </div>
+        <div style="direction:ltr;">
+          <div class="val-icon alt"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg></div>
+          <h3 class="val-h3">Custom Built</h3>
+          <p class="val-p">Bespoke architecture designed from the ground up to meet your specific business requirements. We don't believe in one-size-fits-all. Every VOLTBIT product is tailored precisely to your workflow.</p>
+          <ul class="val-bullets"><li>Scalable Cloud Integration</li><li>API-First Methodology</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES PREVIEW -->
+  <section class="sec glass">
+    <div class="inner">
+      <div class="svc-head">
+        <div>
+          <span class="eyebrow">Our Services</span>
+          <h2 class="sec-h2" style="margin-bottom:6px;">End-to-end digital transformation</h2>
+          <p class="sec-sub">Powered by our core engineering expertise, built around your unique needs.</p>
+        </div>
+        <span class="view-all" onclick="goTo('services')">View All Services <svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
+      </div>
+      <div class="svc-grid">
+        <div class="svc-card"><div class="svc-ic"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/></svg></div><h3 class="svc-h3">Cloud Systems</h3><p class="svc-p">Redundant, distributed infrastructure designed for 99.99% uptime and global scale. Built to grow with you.</p><span class="lm" onclick="goTo('services')">Learn more <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span></div>
+        <div class="svc-card"><div class="svc-ic"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg></div><h3 class="svc-h3">Core Software</h3><p class="svc-p">High-performance CRMs, SaaS platforms, and business systems built with modern frameworks and clean code.</p><span class="lm" onclick="goTo('services')">Learn more <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span></div>
+        <div class="svc-card"><div class="svc-ic"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343"/></svg></div><h3 class="svc-h3">Design &amp; UX</h3><p class="svc-p">Intuitive interfaces and striking visual identities built from deep research and user-centered design thinking.</p><span class="lm" onclick="goTo('services')">Learn more <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-wrap">
+    <div class="cta-box">
+      <div class="cta-gl"></div><div class="cta-gr"></div>
+      <div class="cta-in">
+        <span class="eyebrow">Let's Build Together</span>
+        <h2 class="cta-h2">Have an Idea?</h2>
+        <p class="cta-p">From concept to deployment, we are your strategic technology partner. Let's discuss how we can build your next power-driven platform.</p>
+        <div class="cta-btns">
+          <button class="btn btn-p magnetic" onclick="goTo('contact')">Start a Conversation</button>
+          <button class="btn btn-g" onclick="goTo('process')">View Our Process</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+<!-- ═══════════════════════════════
+     PAGE: SERVICES
+═══════════════════════════════ -->
+<div class="page" id="page-services">
+  <div class="page-hero">
+    <div class="ph-inner">
+      <span class="eyebrow">Our Expertise</span>
+      <h1 class="ph-h1">Precision-Engineered Software<br/><em>Solutions</em></h1>
+      <p class="ph-sub">VOLTBIT delivers high-performance digital tools designed to scale with your business. From custom SaaS platforms to seamless integrations, we build the engine of your digital growth.</p>
+      <button class="btn btn-p magnetic" onclick="goTo('contact')">Start a Project</button>
+    </div>
+  </div>
+
+  <section class="sec">
+    <div class="inner">
+      <div class="big-svc-row">
+        <div class="svc-vis">
+          <svg width="220" height="160" viewBox="0 0 220 160" fill="none" opacity=".9"><rect x="15" y="15" width="190" height="130" rx="8" stroke="rgba(34,211,238,.25)" stroke-width="1.5"/><rect x="28" y="28" width="80" height="10" rx="3" fill="rgba(34,211,238,.14)"/><rect x="28" y="44" width="54" height="8" rx="2" fill="rgba(34,211,238,.08)"/><line x1="28" y1="62" x2="192" y2="62" stroke="rgba(34,211,238,.1)" stroke-width="1"/><rect x="28" y="72" width="76" height="56" rx="4" stroke="rgba(34,211,238,.22)" stroke-width="1" fill="rgba(34,211,238,.04)"/><rect x="32" y="78" width="44" height="6" rx="2" fill="rgba(34,211,238,.12)"/><rect x="32" y="90" width="32" height="5" rx="2" fill="rgba(34,211,238,.07)"/><rect x="32" y="102" width="38" height="5" rx="2" fill="rgba(34,211,238,.07)"/><rect x="116" y="72" width="76" height="24" rx="4" stroke="rgba(34,211,238,.22)" stroke-width="1" fill="rgba(34,211,238,.06)"/><rect x="120" y="79" width="44" height="6" rx="2" fill="rgba(34,211,238,.14)"/><rect x="116" y="104" width="76" height="24" rx="4" stroke="rgba(34,211,238,.15)" stroke-width="1" fill="rgba(34,211,238,.03)"/></svg>
+        </div>
+        <div>
+          <div class="svc-big-icon"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><path stroke-linecap="round" stroke-linejoin="round" d="M8 21h8M12 17v4"/></svg></div>
+          <h2 class="svc-big-h2">Software &amp; Web Apps</h2>
+          <p class="svc-big-p">Powerful, scalable applications tailored to your business logic. We specialize in complex architectures that remain user-friendly and lightning-fast — from simple portals to enterprise-grade platforms.</p>
+          <ul class="svc-checks"><li>Custom CRM Systems</li><li>SaaS Platforms &amp; Portals</li><li>Internal ERP Tools</li><li>Cloud-Native Applications</li></ul>
+        </div>
+      </div>
+      <div class="big-svc-row flip">
+        <div class="svc-vis">
+          <svg width="220" height="160" viewBox="0 0 220 160" fill="none" opacity=".9"><rect x="15" y="20" width="190" height="120" rx="6" stroke="rgba(34,211,238,.2)" stroke-width="1.5"/><rect x="28" y="32" width="100" height="12" rx="3" fill="rgba(34,211,238,.16)"/><rect x="28" y="50" width="64" height="8" rx="2" fill="rgba(34,211,238,.08)"/><line x1="15" y1="68" x2="205" y2="68" stroke="rgba(34,211,238,.08)" stroke-width="1"/><rect x="28" y="78" width="76" height="48" rx="4" fill="rgba(34,211,238,.05)" stroke="rgba(34,211,238,.18)" stroke-width="1"/><rect x="116" y="78" width="76" height="20" rx="4" fill="rgba(34,211,238,.08)" stroke="rgba(34,211,238,.22)" stroke-width="1"/><rect x="120" y="83" width="48" height="6" rx="2" fill="rgba(34,211,238,.2)"/><circle cx="164" cy="115" r="7" stroke="rgba(34,211,238,.35)" stroke-width="1.5"/><path d="M161 115l2 2 4-4" stroke="#22D3EE" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div>
+          <div class="svc-big-icon alt"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" stroke-linejoin="round" d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg></div>
+          <h2 class="svc-big-h2">Websites &amp; Online Presence</h2>
+          <p class="svc-big-p">Your digital storefront should be as professional as your service. We build high-conversion websites that blend aesthetic beauty with technical SEO, designed to attract and retain customers.</p>
+          <ul class="svc-checks"><li>Corporate Websites &amp; Portals</li><li>Landing Pages &amp; Marketing Sites</li><li>E-commerce Engines</li><li>SEO Strategy &amp; Implementation</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec glass">
+    <div class="inner">
+      <div style="margin-bottom:40px;"><span class="eyebrow">More Services</span><h2 class="sec-h2">Additional <em>Capabilities</em></h2></div>
+      <div class="small-svc-grid">
+        <div class="svc-card"><div class="svc-ic"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg></div><h3 class="svc-h3">Automation &amp; Integrations</h3><p class="svc-p">Eliminate manual workflows. We connect your tools through API integrations and automated Email and WhatsApp pipelines, saving your team hours every week.</p></div>
+        <div class="svc-card"><div class="svc-ic"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343"/></svg></div><h3 class="svc-h3">UI/UX &amp; Graphic Design</h3><p class="svc-p">Design that drives engagement. From UX research and wireframing to full design systems and brand identity — we make your product beautiful and intuitive.</p></div>
+        <div class="svc-card"><div class="svc-ic"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg></div><h3 class="svc-h3">Data Science &amp; Analytics</h3><p class="svc-p">Turning raw data into actionable intelligence through custom dashboards, ML pipelines, and AI integrations that help you make smarter decisions.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="inner">
+      <div class="hosting-band">
+        <div>
+          <div class="hb-icon"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/></svg></div>
+          <h2 class="hb-h2">Hosting &amp; Maintenance</h2>
+          <p class="hb-p">Your software needs a reliable home and constant care. We provide managed hosting with 99.9% uptime, proactive security patching, and a team on call when you need them.</p>
+          <div class="hb-tags"><span class="hb-tag">Server Monitoring</span><span class="hb-tag">Daily Backups</span><span class="hb-tag">Security Audits</span><span class="hb-tag">SLA Support</span><span class="hb-tag">24/7 On-Call</span></div>
+        </div>
+        <div><button class="btn btn-c magnetic" onclick="goTo('contact')">Secure Your Service</button></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-wrap">
+    <div class="cta-box">
+      <div class="cta-gl"></div><div class="cta-gr"></div>
+      <div class="cta-in">
+        <span class="eyebrow">Let's Build Together</span>
+        <h2 class="cta-h2">Have an Idea? Let's Build It.</h2>
+        <p class="cta-p">Join the businesses scaling their power with VOLTBIT's modern software engineering. From concept to deployment, we handle everything.</p>
+        <div class="cta-btns">
+          <button class="btn btn-p magnetic" onclick="goTo('contact')">Start a Project</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+<!-- ═══════════════════════════════
+     PAGE: PROCESS
+═══════════════════════════════ -->
+<div class="page" id="page-process">
+  <div class="page-hero">
+    <div class="ph-inner">
+      <span class="eyebrow">Methodology</span>
+      <h1 class="ph-h1">Our Engineering<br/><em>Ecosystem</em></h1>
+      <p class="ph-sub">A structured, six-stage evolution from initial concept to high-performance software, ensuring precision at every milestone.</p>
+    </div>
+  </div>
+
+  <section class="sec glass">
+    <div class="inner">
+      <div class="process-grid">
+        <div class="step-card"><div class="step-num">01</div><div class="step-icon"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35"/></svg></div><h3 class="step-h3">Discovery</h3><p class="step-p">We immerse ourselves in your business objectives, technical requirements, and user needs to define the project's strategic foundation.</p></div>
+        <div class="step-card"><div class="step-num">02</div><div class="step-icon"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg></div><h3 class="step-h3">Planning</h3><p class="step-p">Creating detailed technical roadmaps, architecture diagrams, and feature prioritization to ensure a scalable development path.</p></div>
+        <div class="step-card featured"><div class="step-num">03</div><div class="step-icon"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343"/></svg></div><h3 class="step-h3">Design</h3><p class="step-p">Crafting high-fidelity UI components and intuitive UX patterns aligned with your brand identity and professional standards.</p></div>
+        <div class="step-card"><div class="step-num">04</div><div class="step-icon"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg></div><h3 class="step-h3">Development</h3><p class="step-p">Agile engineering with clean, documented code using modern frameworks and performance-first methodologies throughout.</p></div>
+        <div class="step-card"><div class="step-num">05</div><div class="step-icon"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 3l14 9-14 9V3z"/></svg></div><h3 class="step-h3">Launch</h3><p class="step-p">Rigorous QA testing, deployment automation, and production stabilization to ensure a flawless market debut for your product.</p></div>
+        <div class="step-card"><div class="step-num">06</div><div class="step-icon"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg></div><h3 class="step-h3">Support</h3><p class="step-p">Continuous monitoring, security updates, and data-driven improvements to keep your software ahead of the curve.</p></div>
+      </div>
+      <!-- mobile timeline -->
+      <div class="process-timeline">
+        <div class="tl-item"><div class="tl-left"><div class="tl-circle">1</div><div class="tl-line"></div></div><div><h3 class="tl-h3">Discovery</h3><p class="tl-p">We understand your business goals, challenges, and user needs to define the strategic foundation.</p></div></div>
+        <div class="tl-item"><div class="tl-left"><div class="tl-circle">2</div><div class="tl-line"></div></div><div><h3 class="tl-h3">Planning</h3><p class="tl-p">Technical roadmaps, architecture, and feature prioritization for a scalable development path.</p></div></div>
+        <div class="tl-item"><div class="tl-left"><div class="tl-circle">3</div><div class="tl-line"></div></div><div><h3 class="tl-h3">Design</h3><p class="tl-p">High-fidelity UI/UX components aligned with your brand identity and professional standards.</p></div></div>
+        <div class="tl-item"><div class="tl-left"><div class="tl-circle">4</div><div class="tl-line"></div></div><div><h3 class="tl-h3">Development</h3><p class="tl-p">Agile engineering with clean, documented code and performance-first methodologies.</p></div></div>
+        <div class="tl-item"><div class="tl-left"><div class="tl-circle">5</div><div class="tl-line"></div></div><div><h3 class="tl-h3">Launch</h3><p class="tl-p">Rigorous QA, deployment automation, and stabilization for a flawless market debut.</p></div></div>
+        <div class="tl-item"><div class="tl-left"><div class="tl-circle">6</div></div><div><h3 class="tl-h3">Support &amp; Improvement</h3><p class="tl-p">Ongoing monitoring, security updates, and data-driven improvements to keep your software cutting-edge.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="inner">
+      <div class="banner-img">
+        <div class="banner-overlay"></div>
+        <div class="banner-content">
+          <p class="banner-quote">"Precision is not an act, but a habit."</p>
+          <p class="banner-sub">Our process is designed to eliminate ambiguity and deliver measurable business value through iterative engineering excellence.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-wrap">
+    <div class="cta-box">
+      <div class="cta-gl"></div><div class="cta-gr"></div>
+      <div class="cta-in">
+        <span class="eyebrow">Let's Build Together</span>
+        <h2 class="cta-h2">Have an Idea? Let's Build It.</h2>
+        <p class="cta-p">Experience our structured process firsthand. Join the industry leaders who trust VOLTBIT for their digital power.</p>
+        <div class="cta-btns">
+          <button class="btn btn-p magnetic" onclick="goTo('contact')">Start a Project</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+<!-- ═══════════════════════════════
+     PAGE: FAQ
+═══════════════════════════════ -->
+<div class="page" id="page-faq">
+  <div class="page-hero">
+    <div class="ph-inner">
+      <span class="eyebrow">Knowledge Base</span>
+      <h1 class="ph-h1">Frequently Asked<br/><em>Questions</em></h1>
+      <p class="ph-sub">Everything you need to know about our software development lifecycle, ongoing support, and how we help scale your digital infrastructure.</p>
+    </div>
+  </div>
+
+  <section class="sec glass">
+    <div class="inner">
+      <div class="faq-layout">
+        </div>
+        <div class="faq-list">
+          <span class="eyebrow">Got Questions</span>
+          <h2 class="sec-h2">Common <em>Questions</em></h2>
+          <details open><summary>Typical Project Timelines<div class="sum-icon"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg></div></summary><div class="faq-ans">Project timelines vary depending on scope and complexity. Smaller projects like landing pages take 2–4 weeks, while larger custom systems require 2–6 months. We use agile methodology to deliver functional MVP versions within the first 6–8 weeks so you can begin testing and providing feedback early.</div></details>
+          <details><summary>Post-Launch Support &amp; Maintenance<div class="sum-icon"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg></div></summary><div class="faq-ans">We offer comprehensive maintenance packages including 24/7 server monitoring, security patches, routine updates, and monthly performance audits. Our team remains your technical partner long after deployment, providing bug fixes and feature enhancements as your business evolves.</div></details>
+          <details><summary>SaaS Architecture &amp; Scalability<div class="sum-icon"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg></div></summary><div class="faq-ans">Our SaaS solutions are built on cloud-native architectures designed for infinite scalability. We implement multi-tenant databases and containerized deployments (Docker/Kubernetes) to ensure your platform remains responsive as your user base grows from hundreds to millions.</div></details>
+          <details><summary>Legacy System Improvements<div class="sum-icon"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg></div></summary><div class="faq-ans">We specialize in modernizing outdated systems through incremental refactoring or complete cloud migration. By integrating modern APIs and optimizing database queries, we breathe new life into your existing infrastructure while reducing operational costs.</div></details>
+          <details><summary>Do you build SaaS products?<div class="sum-icon"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg></div></summary><div class="faq-ans">Yes. We design and develop scalable SaaS products, customer portals, and subscription-based systems from the ground up — including billing integration, user authentication, multi-tenancy, and everything needed to launch a professional software product.</div></details>
+          <details><summary>Where is VOLTBIT based?<div class="sum-icon"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg></div></summary><div class="faq-ans">VOLTBIT is based in Lusaka, Zambia. We serve clients locally across Zambia as well as businesses internationally, delivering high-performance digital solutions with the professional reliability your business deserves.</div></details>
+        </div>
+        <div>
+          <p class="sec-sub">Can't find what you're looking for? Reach out directly and we'll get back to you within one business day.</p>
+          <div class="faq-promo">
+            <h4>Still have questions?</h4>
+            <p>Our team is ready to discuss your project and answer any specific questions about what we build.</p>
+            <button class="btn btn-p" onclick="goTo('contact')" style="font-size:13px;padding:11px 22px;">Talk to Us</button>
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec dark-sec">
+    <div class="inner">
+      <div style="text-align:center;margin-bottom:56px;">
+        <span class="eyebrow">Who We Serve</span>
+        <h2 class="sec-h2">Industries We <em>Work With</em></h2>
+        <p class="sec-sub center" style="color:rgba(255,255,255,.45);">Tailored software ecosystems built around the unique operational challenges of diverse sectors.</p>
+      </div>
+      <div class="ind-grid">
+        <div class="ind-card"><div class="ind-ic"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg></div><div class="ind-name">Business Services</div><div class="ind-desc">Streamlining workflows and client management systems.</div></div>
+        <div class="ind-card"><div class="ind-ic"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg></div><div class="ind-name">Retail &amp; E-Commerce</div><div class="ind-desc">Omnichannel e-commerce and inventory optimization.</div></div>
+        <div class="ind-card"><div class="ind-ic"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg></div><div class="ind-name">Fitness &amp; Wellness</div><div class="ind-desc">Member management and health tracking apps.</div></div>
+        <div class="ind-card"><div class="ind-ic"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg></div><div class="ind-name">Education &amp; Training</div><div class="ind-desc">LMS platforms and digital learning environments.</div></div>
+        <div class="ind-card"><div class="ind-ic"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg></div><div class="ind-name">Hospitality &amp; Events</div><div class="ind-desc">Reservations, POS, and guest experience portals.</div></div>
+        <div class="ind-card"><div class="ind-ic"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div><div class="ind-name">Startups &amp; Tech</div><div class="ind-desc">Rapid MVP development and scalable infrastructure.</div></div>
+        <div class="ind-card"><div class="ind-ic"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg></div><div class="ind-name">Healthcare &amp; Clinics</div><div class="ind-desc">Secure patient management and health data portals.</div></div>
+        <div class="ind-card ind-cta" onclick="goTo('contact')"><div class="ind-ic"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg></div><div class="ind-name">Your Industry?</div><div class="ind-desc">We adapt to your sector's unique challenges.</div><div class="ind-arrow">Learn how <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-wrap">
+    <div class="cta-box">
+      <div class="cta-gl"></div><div class="cta-gr"></div>
+      <div class="cta-in">
+        <span class="eyebrow">Let's Build Together</span>
+        <h2 class="cta-h2">Have an Idea? Let's Build It.</h2>
+        <p class="cta-p">We transform complex ideas into high-performing software. Let's discuss your project scope and requirements today.</p>
+        <div class="cta-btns">
+          <button class="btn btn-p magnetic" onclick="goTo('contact')">Book a Strategy Call</button>
+          <button class="btn btn-g" onclick="goTo('services')">View Our Services</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+<!-- ═══════════════════════════════
+     PAGE: CONTACT
+═══════════════════════════════ -->
+<div class="page" id="page-contact">
+  <div class="page-hero">
+    <div class="ph-inner">
+      <span class="eyebrow">Let's Build It</span>
+      <h1 class="ph-h1">Have an Idea?<br/><em>Let's Build It.</em></h1>
+      <p class="ph-sub">From custom business systems to professional websites, we turn your unique ideas into practical, scalable digital products.</p>
+    </div>
+  </div>
+
+  <section class="sec glass">
+    <div class="inner">
+      <div class="contact-grid">
+        <div class="form-card">
+          <h3 class="form-title">Start a Project</h3>
+
+          <!-- Formspree success message -->
+          <div data-fs-success class="fs-success" style="display:none;">
+            <div class="fs-success-inner">
+              <svg width="40" height="40" fill="none" viewBox="0 0 24 24" stroke="#22d3ee" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <h4>Message sent!</h4>
+              <p>Thanks for reaching out. We'll get back to you within one business day.</p>
+            </div>
+          </div>
+
+          <!-- Formspree global error -->
+          <div data-fs-error class="fs-global-error" style="display:none;"></div>
+
+          <form id="voltbit-contact-form">
+            <div class="form-row">
+              <div class="fg">
+                <label for="fc-name">Full Name</label>
+                <input id="fc-name" type="text" name="name" placeholder="John Doe" data-fs-field required/>
+                <span class="fs-field-error" data-fs-error="name"></span>
+              </div>
+              <div class="fg">
+                <label for="fc-email">Email Address</label>
+                <input id="fc-email" type="email" name="email" placeholder="john@example.com" data-fs-field required/>
+                <span class="fs-field-error" data-fs-error="email"></span>
+              </div>
+            </div>
+            <div class="fg">
+              <label for="fc-company">Company (Optional)</label>
+              <input id="fc-company" type="text" name="company" placeholder="Your company or organisation"/>
+            </div>
+            <div class="fg">
+              <label for="fc-service">Service Needed</label>
+              <select id="fc-service" name="service" data-fs-field required>
+                <option value="" disabled selected>Select a service…</option>
+                <option>Software &amp; Web Applications</option>
+                <option>Website &amp; Online Presence</option>
+                <option>Automation &amp; Integrations</option>
+                <option>UI/UX &amp; Graphic Design</option>
+                <option>Hosting &amp; Maintenance</option>
+                <option>Other / Not Sure</option>
+              </select>
+              <span class="fs-field-error" data-fs-error="service"></span>
+            </div>
+            <div class="fg">
+              <label for="fc-details">Project Details</label>
+              <textarea id="fc-details" name="message" placeholder="Tell us about your idea, goals, timeline, and any specific requirements…" data-fs-field required></textarea>
+              <span class="fs-field-error" data-fs-error="message"></span>
+            </div>
+            <button class="btn btn-p btn-full magnetic" type="submit" data-fs-submit-btn>
+              <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+              <span class="btn-label">Send Message</span>
+            </button>
+          </form>
+        </div>
+        <div>
+          <div class="info-badge">
+            <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            Based in Lusaka, Zambia
+          </div>
+          <h2 class="info-h2">Let's talk about your project</h2>
+          <p class="info-p">Reach out via email, WhatsApp, or the form. We respond to all enquiries within one business day and would love to hear about your vision.</p>
+          <a class="contact-item" href="mailto:voltbitsoftware@gmail.com" style="text-decoration:none;">
+            <div class="ci-icon"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></div>
+            <div><div class="ci-label">Email</div><div class="ci-value">voltbitsoftware@gmail.com</div></div>
+            <div class="ci-arrow"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></div>
+          </a>
+          <a class="contact-item" href="https://wa.me/260979460277" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">
+            <div class="ci-icon"><i class="fab fa-whatsapp" style="font-size:20px;"></i></div>
+            <div><div class="ci-label">WhatsApp</div><div class="ci-value">+260 979 460 277</div></div>
+            <div class="ci-arrow"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></div>
+          </a>
+          <div class="location-card">
+            <div class="loc-ic"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div>
+            <div><div class="loc-label">Our Base</div><div class="loc-val">Lusaka, Zambia</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+</div>
+
+  <footer class="site-footer">
+    <div class="inner">
+      <div class="footer-g">
+        <div class="footer-brand"><div class="fw" onclick="goTo('home')" style="cursor:pointer;"><img src="/voltbit-logo.png" style="height:48px;width:auto;" alt="VOLTBIT Logo"></div><p>Building the future of software. Professional, scalable, and reliable technology solutions.</p></div>
+        <div class="fc"><h4>Services</h4><ul><li onclick="goTo('services')">Software Development</li><li onclick="goTo('services')">Web Design</li><li onclick="goTo('services')">Automation</li><li onclick="goTo('services')">Hosting</li></ul></div>
+        <div class="fc"><h4>Company</h4><ul><li onclick="goTo('home')">Home</li><li onclick="goTo('process')">Process</li><li onclick="goTo('faq')">FAQ</li><li onclick="goTo('contact')">Contact</li></ul></div>
+        <div class="fc"><h4>Connect</h4>
+
+<div class="social-icons">
+  <a href="https://www.tiktok.com/@voltbit.tech?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+  <a href="https://instagram.com/voltbit1" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+  <a href="https://www.facebook.com/share/1TT94qsuXK/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+  <a href="https://wa.me/260979460277" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+  <a href="mailto:voltbitsoftware@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+</div>
+
+</div>
+      </div>
+      <div class="footer-bt"><span>© 2026 VOLTBIT Software. All rights reserved.</span><span>Lusaka, Zambia · Where Code Builds Power</span></div>
+    </div>
+  </footer>
+
+<script>
+/* ── Routing ── */
+function goTo(page) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page-' + page).classList.add('active');
+  window.scrollTo(0,0);
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    a.classList.toggle('active', a.dataset.page === page);
+  });
+  document.querySelectorAll('.bn').forEach(b => {
+    b.classList.toggle('active', b.dataset.page === page);
+  });
+}
+
+/* ── Hamburger ── */
+document.getElementById('hbg').addEventListener('click', () => document.getElementById('mob').classList.add('open'));
+document.getElementById('mclose').addEventListener('click', () => document.getElementById('mob').classList.remove('open'));
+function closeMob() { document.getElementById('mob').classList.remove('open'); }
+
+/* ── Nav shadow on scroll ── */
+window.addEventListener('scroll', () => {
+  document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 10);
+});
+
+/* ── Cursor glow ── */
+const glow = document.getElementById('cursorGlow');
+document.addEventListener('mousemove', e => {
+  glow.style.left = e.clientX + 'px';
+  glow.style.top  = e.clientY + 'px';
+});
+
+/* ── Magnetic buttons ── */
+document.querySelectorAll('.magnetic').forEach(btn => {
+  btn.addEventListener('mousemove', e => {
+    const rect = btn.getBoundingClientRect();
+    const x = e.clientX - rect.left - rect.width  / 2;
+    const y = e.clientY - rect.top  - rect.height / 2;
+    btn.style.transform = `translate(${x * 0.14}px, ${y * 0.14}px)`;
+  });
+  btn.addEventListener('mouseleave', () => {
+    btn.style.transform = 'translate(0,0)';
+  });
+});
+
+function toggleMobSocial(e) {
+  e.stopPropagation();
+  const drop = document.getElementById('mobSocialDrop');
+  const btn = e.currentTarget;
+  drop.classList.toggle('open');
+  btn.classList.toggle('open');
+}
+</script>
+
   <!-- Formspree Ajax -->
   <script>
     window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
