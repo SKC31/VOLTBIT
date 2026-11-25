@@ -3,7 +3,71 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Voltbit | Where Code Builds Power</title>
+<meta name="color-scheme" content="dark"/>
+
+<!-- ═══ PRIMARY SEO ═══ -->
+<title>VOLTBIT Software</title>
+<meta name="description" content="VOLTBIT designs and develops custom web applications, websites, and business systems that help companies streamline operations, improve customer experiences, and grow online. Based in Lusaka — fast, scalable, and reliable tech."/>
+<meta name="keywords" content="software development Zambia, web design Lusaka, app development Zambia, website design Zambia, IT company Lusaka, automation Zambia, VOLTBIT, tech company Zambia"/>
+<meta name="author" content="VOLTBIT Software"/>
+<meta name="robots" content="index, follow"/>
+<link rel="sitemap" type="application/xml" href="/sitemap.xml"/>
+<link rel="canonical" href="https://voltbitsoftware.com/"/>
+
+<!-- ═══ OPEN GRAPH (Facebook, WhatsApp, LinkedIn previews) ═══ -->
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://voltbitsoftware.com/"/>
+<meta property="og:title" content="VOLTBIT Software | Software Development in Lusaka, Zambia"/>
+<meta property="og:description" content="Professional software development, web design, automation, and hosting solutions. Built for Zambian businesses that want to grow fast."/>
+<meta property="og:image" content="https://voltbitsoftware.com/fav.png"/>
+<meta property="og:image:alt" content="VOLTBIT Software Logo"/>
+<meta property="og:site_name" content="VOLTBIT Software"/>
+<meta property="og:locale" content="en_ZM"/>
+
+<!-- ═══ TWITTER CARD ═══ -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="VOLTBIT Software | Software Development in Lusaka, Zambia"/>
+<meta name="twitter:description" content="Professional software development, web design, automation, and hosting solutions. Built for Zambian businesses that want to grow fast."/>
+<meta name="twitter:image" content="https://voltbitsoftware.com/fav.png"/>
+
+<!-- ═══ GEO & LOCAL SEO ═══ -->
+<meta name="geo.region" content="ZM-09"/>
+<meta name="geo.placename" content="Lusaka, Zambia"/>
+<meta name="geo.position" content="-15.4167;28.2833"/>
+<meta name="ICBM" content="-15.4167, 28.2833"/>
+
+<!-- ═══ STRUCTURED DATA (Google Rich Results) ═══ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "VOLTBIT Software",
+  "url": "https://voltbitsoftware.com",
+  "logo": "https://voltbitsoftware.com/fav.png",
+  "image": "https://voltbitsoftware.com/fav.png",
+  "description": "Professional software development, web design, automation, and hosting solutions for businesses in Zambia.",
+  "email": "voltbitsoftware@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Lusaka",
+    "addressCountry": "ZM"
+  },
+  "areaServed": ["ZM", "Africa"],
+  "serviceType": ["Software Development", "Web Design", "Automation", "UI/UX Design", "Hosting"],
+  "priceRange": "$$",
+  "sameAs": [
+    "https://www.facebook.com/share/1TT94qsuXK/",
+    "https://instagram.com/voltbit1",
+    "https://www.tiktok.com/@voltbit.tech"
+  ]
+}
+</script>
+
+<!-- ═══ FAVICON ═══ -->
+<link rel="icon" type="image/png" sizes="32x32" href="fav.png"/>
+<link rel="icon" type="image/png" sizes="16x16" href="fav.png"/>
+<link rel="apple-touch-icon" href="fav.png"/>
+<meta name="msapplication-TileImage" content="fav.png"/>
 <link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&f[]=satoshi@300,400,500,700&display=swap" rel="stylesheet"/>
 <style>
 
@@ -46,8 +110,8 @@ a{color:inherit;text-decoration:none;}
 /* ══════════════════════════════════════
    PAGE SYSTEM
 ══════════════════════════════════════ */
-.page{display:none;}
-.page.active{display:block;}
+.page{display:none !important;overflow:hidden;}
+.page.active{display:block !important;}
 
 /* ══════════════════════════════════════
    CURSOR GLOW
@@ -73,7 +137,7 @@ a{color:inherit;text-decoration:none;}
   transition:box-shadow .3s;
 }
 .nav.scrolled{box-shadow:0 4px 32px rgba(0,0,0,.4);}
-.nav-logo{display:flex;align-items:center;gap:12px;cursor:pointer;}
+.nav-logo{display:flex;align-items:center;gap:4px;cursor:pointer;}
 .nav-wordmark{
   font-family:'Clash Display',sans-serif;font-size:22px;font-weight:700;
   background:linear-gradient(90deg,#fff,var(--cyan));
@@ -223,14 +287,14 @@ a{color:inherit;text-decoration:none;}
 
 /* FOOTER */
 .site-footer{padding:60px 60px 32px;border-top:1px solid rgba(34,211,238,.07);}
-.footer-g{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.06);margin-bottom:24px;}
+.footer-g{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;padding-bottom:40px;margin-bottom:24px;}
 .fw{font-family:'Clash Display',sans-serif;font-size:22px;font-weight:700;cursor:pointer;background:linear-gradient(90deg,#fff,var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
 .footer-brand p{font-size:13px;line-height:1.7;margin-top:14px;color:rgba(255,255,255,.28);max-width:200px;}
 .fc h4{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:18px;}
 .fc ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
 .fc ul li{font-size:13px;color:rgba(255,255,255,.28);cursor:pointer;transition:color .2s;}
 .fc ul li:hover{color:var(--cyan);}
-.footer-bt{display:flex;justify-content:space-between;font-size:12px;color:rgba(255,255,255,.18);}
+.footer-bt{display:flex;justify-content:space-between;font-size:12px;color:rgba(255,255,255,.18);border-top:1px solid rgba(255,255,255,.06);padding-top:24px;margin-top:8px;}
 
 /* ══════════════════════════════════════
    HOME PAGE — HERO
@@ -512,6 +576,9 @@ details[open] .sum-icon svg{color:#04141b;}
 .ind-card.ind-cta .ind-desc{color:rgba(255,255,255,.7);}
 .ind-arrow{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:700;color:rgba(255,255,255,.55);margin-top:16px;}
 .ind-arrow svg{width:13px;height:13px;}
+.sec-sub {
+    margin-top: 40px; /* Adjust this value to get the desired gap */
+}
 
 /* ══════════════════════════════════════
    CONTACT PAGE
@@ -553,12 +620,6 @@ details[open] .sum-icon svg{color:#04141b;}
 .loc-ic svg{width:19px;height:19px;color:var(--cyan);}
 .loc-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.35);margin-bottom:3px;}
 .loc-val{font-family:'Clash Display',sans-serif;font-size:16px;font-weight:700;}
-.map-box{background:rgba(255,255,255,.03);border:1px solid rgba(34,211,238,.12);border-radius:var(--rl);height:200px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;margin-top:56px;}
-.map-grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(34,211,238,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(34,211,238,.06) 1px,transparent 1px);background-size:36px 36px;}
-.map-pin{position:relative;z-index:1;text-align:center;}
-.map-pin-dot{width:14px;height:14px;border-radius:50%;background:var(--cyan);border:3px solid var(--cyan-soft);margin:0 auto 10px;box-shadow:0 0 0 7px rgba(34,211,238,.1),0 0 0 14px rgba(34,211,238,.05);}
-.map-pin-label{font-family:'Clash Display',sans-serif;font-size:14px;font-weight:700;}
-.map-pin-sub{font-size:12px;color:rgba(255,255,255,.38);margin-top:4px;}
 
 /* ══════════════════════════════════════
    RESPONSIVE
@@ -571,8 +632,8 @@ details[open] .sum-icon svg{color:#04141b;}
   .nav{padding:0 20px;height:64px;}
   .nav-links,.nav-cta{display:none;}
   .nav-hamburger{display:flex;}
-  .bnav{display:flex;}
-  body{padding-bottom:62px;}
+  .bnav{display:none;}
+  body{padding-bottom:0;}
   .hero{grid-template-columns:1fr;padding:80px 20px 64px;min-height:auto;gap:0;}
   .hero-content{padding-top:24px;}
   .hero-visual{display:none;}
@@ -584,8 +645,15 @@ details[open] .sum-icon svg{color:#04141b;}
   .cta-box{padding:48px 24px;border-radius:var(--rl);}
   .cta-btns{flex-direction:column;align-items:center;}
   .site-footer{padding:48px 20px 24px;}
-  .footer-g{grid-template-columns:1fr 1fr;gap:28px;}
+  .footer-g{grid-template-columns:1fr;gap:28px;}
   .footer-bt{flex-direction:column;gap:6px;text-align:center;}
+  .footer-brand{text-align:center;display:flex;flex-direction:column;align-items:center;}
+  .footer-brand p{max-width:280px;text-align:center;}
+  .fw{text-align:center;}
+  .fc{text-align:center;}
+  .fc ul{padding:0;list-style:none;}
+  .fc ul li{cursor:pointer;}
+  .social-icons{justify-content:center;}
   .page-hero{padding:100px 20px 60px;}
   .about-grid{grid-template-columns:1fr;gap:36px;}
   .stats-row{grid-template-columns:repeat(2,1fr);gap:24px;}
@@ -608,10 +676,385 @@ details[open] .sum-icon svg{color:#04141b;}
 }
 @media(max-width:480px){
   .checks{grid-template-columns:1fr;}
-  .footer-g{grid-template-columns:1fr;}
+  .footer-g{grid-template-columns:1fr;gap:32px;}
+  .footer-brand{}
+  .fc{text-align:center;width:100%;padding-top:16px;}
   .ind-grid{grid-template-columns:1fr;}
+  .footer-bt{font-size:11px;}
 }
+
+/* ── MOBILE CONNECT SOCIAL DROPDOWN ── */
+.mob-connect-wrap { width: 100%; }
+.mob-connect-btn {
+  width: 100%;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 28px;
+  font-family: 'Clash Display', sans-serif;
+  font-weight: 700;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  letter-spacing: -0.02em;
+  text-align: center;
+}
+
+.mob-social-drop {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: 14px;
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+  background: rgba(5,18,28,0.92);
+  border: 1px solid rgba(34,211,238,0.2);
+  border-radius: 18px;
+  overflow: hidden;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 8px 40px rgba(0,0,0,0.4), 0 0 0 1px rgba(34,211,238,0.06);
+  /* hidden state */
+  max-height: 0;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-8px) scaleY(0.96);
+  transform-origin: top center;
+  transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1),
+              opacity 0.3s ease,
+              transform 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+.mob-social-drop.open {
+  max-height: 400px;
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0) scaleY(1);
+}
+.mob-social-drop a {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 15px 22px;
+  color: rgba(255,255,255,0.72);
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(34,211,238,0.07);
+  transition: background 0.2s, color 0.2s, padding-left 0.2s;
+  /* stagger in */
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: background 0.2s, color 0.2s, padding-left 0.2s,
+              opacity 0.3s ease, transform 0.3s ease;
+}
+.mob-social-drop.open a { opacity: 1; transform: translateX(0); }
+.mob-social-drop.open a:nth-child(1) { transition-delay: 0.05s; }
+.mob-social-drop.open a:nth-child(2) { transition-delay: 0.10s; }
+.mob-social-drop.open a:nth-child(3) { transition-delay: 0.15s; }
+.mob-social-drop.open a:nth-child(4) { transition-delay: 0.20s; }
+.mob-social-drop.open a:nth-child(5) { transition-delay: 0.25s; }
+.mob-social-drop a:last-child { border-bottom: none; }
+.mob-social-drop a:active { background: rgba(34,211,238,0.1); padding-left: 28px; color: #22d3ee; }
+.mob-social-drop a i {
+  width: 32px; height: 32px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 50%;
+  background: rgba(34,211,238,0.1);
+  color: #22d3ee;
+  font-size: 14px;
+  flex-shrink: 0;
+  transition: background 0.2s, transform 0.2s;
+}
+.mob-social-drop a:active i { background: rgba(34,211,238,0.25); transform: scale(1.15); }
+.mob-connect-btn .mob-chev-line {
+  width: 22px; height: 2px;
+  background: rgba(34,211,238,0.6);
+  border-radius: 2px;
+  position: relative;
+  transition: background 0.2s;
+}
+.mob-connect-btn .mob-chev-line::before,
+.mob-connect-btn .mob-chev-line::after {
+  content: '';
+  position: absolute;
+  width: 11px; height: 2px;
+  background: rgba(34,211,238,0.6);
+  border-radius: 2px;
+  top: 0;
+  transition: transform 0.3s cubic-bezier(0.4,0,0.2,1), background 0.2s;
+}
+.mob-connect-btn .mob-chev-line::before { right: 0; transform: rotate(35deg) translateY(-3px); }
+.mob-connect-btn .mob-chev-line::after  { left: 0;  transform: rotate(-35deg) translateY(-3px); }
+.mob-connect-btn.open .mob-chev-line::before { transform: rotate(-35deg) translateY(-3px); }
+.mob-connect-btn.open .mob-chev-line::after  { transform: rotate(35deg) translateY(-3px); }
+
+
+/* ── FORMSPREE STATES ── */
+.fs-success { display: none; }
+.fs-success-inner {
+  text-align: center;
+  padding: 40px 28px;
+  display: flex; flex-direction: column; align-items: center; gap: 16px;
+  background: rgba(34,211,238,0.06);
+  border: 1px solid rgba(34,211,238,0.25);
+  border-radius: 18px;
+}
+.fs-success-icon {
+  width: 64px; height: 64px; border-radius: 50%;
+  background: rgba(34,211,238,0.12);
+  border: 2px solid rgba(34,211,238,0.35);
+  display: flex; align-items: center; justify-content: center;
+  animation: popIn 0.5s cubic-bezier(0.34,1.56,0.64,1) both;
+}
+@keyframes popIn { from { transform: scale(0); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+.fs-success-inner h4 {
+  font-family: 'Clash Display', sans-serif; font-size: 22px; font-weight: 700; color: #fff; margin: 0;
+}
+.fs-success-inner p { color: rgba(255,255,255,0.55); font-size: 15px; margin: 0; line-height: 1.6; }
+.fs-success-back {
+  margin-top: 8px; padding: 10px 24px; border-radius: 12px; border: none; cursor: pointer;
+  background: linear-gradient(135deg,#0F766E,#22D3EE); color: #04141b;
+  font-family: 'Satoshi',sans-serif; font-weight: 700; font-size: 13px;
+  transition: transform .2s, box-shadow .2s;
+}
+.fs-success-back:hover { transform: translateY(-2px); box-shadow: 0 0 24px rgba(34,211,238,.35); }
+.fs-global-error {
+  background: rgba(239,68,68,0.08); border: 1px solid rgba(239,68,68,0.3);
+  border-radius: 10px; padding: 12px 16px; margin-bottom: 16px;
+  color: #fca5a5; font-size: 14px;
+}
+.fs-field-error {
+  display: block; font-size: 12px; color: #fca5a5;
+  margin-top: 4px; min-height: 16px;
+}
+input[aria-invalid="true"], select[aria-invalid="true"], textarea[aria-invalid="true"] {
+  border-color: rgba(239,68,68,0.6) !important;
+  box-shadow: 0 0 0 3px rgba(239,68,68,0.12) !important;
+}
+button[data-fs-submit-btn]:disabled {
+  opacity: 0.6; cursor: not-allowed; pointer-events: none;
+}
+
+
+/* Force consistent colors across all browsers */
+:root { color-scheme: dark; }
+* { -webkit-tap-highlight-color: transparent; }
+
 </style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+
+
+<style id="voltbit-social-final">
+
+.contact-dropdown{
+  position:relative;
+  display:flex;
+  align-items:center;
+}
+
+.contact-dropdown > a{
+  font-size:14px;
+  font-weight:600;
+  color:rgba(255,255,255,.65);
+
+  cursor:pointer;
+
+  transition:color .2s;
+
+  position:relative;
+
+  padding-bottom:3px;
+
+  display:flex;
+  align-items:center;
+}
+
+.contact-dropdown > a::after{
+  content:'';
+  position:absolute;
+  bottom:0;
+  left:0;
+  right:0;
+  height:2px;
+
+  background:var(--cyan);
+
+  border-radius:2px;
+
+  transform:scaleX(0);
+  transform-origin:left;
+
+  transition:transform .25s;
+}
+
+.contact-dropdown:hover > a{
+  color:var(--cyan);
+}
+
+.contact-dropdown:hover > a::after{
+  transform:scaleX(1);
+}
+
+/* DROPDOWN MENU */
+.contact-dropdown-menu{
+  position:absolute;
+
+  top:100%;
+  left:50%;
+
+  transform:translateX(-50%) translateY(10px);
+
+  background:rgba(5,15,20,.97);
+
+  border:1px solid rgba(34,211,238,.18);
+
+  border-radius:18px;
+
+  padding:14px 16px;
+
+  backdrop-filter:blur(20px);
+
+  box-shadow:
+    0 12px 40px rgba(0,0,0,.35),
+    0 0 24px rgba(34,211,238,.08);
+
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+
+  transition:
+    opacity .22s ease,
+    transform .22s ease,
+    visibility .22s ease;
+
+  z-index:3000;
+}
+
+/* invisible hover bridge */
+.contact-dropdown-menu::before{
+  content:'';
+
+  position:absolute;
+
+  top:-18px;
+  left:0;
+  right:0;
+
+  height:18px;
+}
+
+/* SHOW MENU */
+.contact-dropdown:hover .contact-dropdown-menu,
+.contact-dropdown:focus-within .contact-dropdown-menu{
+  opacity:1;
+  visibility:visible;
+  pointer-events:auto;
+
+  transform:translateX(-50%) translateY(0);
+}
+
+/* ICON ROW */
+.social-icons{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  gap:12px;
+
+  flex-wrap:nowrap;
+}
+
+/* ICON BUTTONS */
+.social-icons a{
+  width:42px;
+  height:42px;
+
+  border-radius:12px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background:rgba(255,255,255,.05);
+
+  border:1px solid rgba(34,211,238,.18);
+
+  color:var(--cyan);
+
+  transition:
+    transform .25s ease,
+    background .25s ease,
+    border-color .25s ease,
+    box-shadow .25s ease,
+    color .25s ease;
+}
+
+/* ICON HOVER */
+.social-icons a:hover{
+  transform:translateY(-3px);
+
+  background:rgba(34,211,238,.08);
+
+  border-color:rgba(34,211,238,.35);
+
+  box-shadow:
+    0 0 24px rgba(34,211,238,.18),
+    0 0 48px rgba(34,211,238,.08);
+
+  color:#67E8F9;
+}
+
+/* ICON SIZE */
+.social-icons i{
+  font-size:18px;
+}
+
+/* FOOTER LOGO */
+.footer-brand .fw img{
+  max-height:48px;
+  width:auto;
+}
+
+/* FOOTER SOCIALS */
+.fc .social-icons{
+  margin-top:4px;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+  .contact-dropdown{
+    height:auto;
+  }
+
+  .contact-dropdown-menu{
+    left:auto;
+    right:0;
+
+    transform:translateY(10px);
+  }
+
+  .contact-dropdown:hover .contact-dropdown-menu,
+  .contact-dropdown:focus-within .contact-dropdown-menu{
+    transform:translateY(0);
+  }
+
+  .social-icons{
+    gap:10px;
+  }
+
+  .social-icons a{
+    width:40px;
+    height:40px;
+  }
+}
+
+</style>
+
+
 </head>
 <body>
 
@@ -621,19 +1064,23 @@ details[open] .sum-icon svg{color:#04141b;}
 <!-- NAV -->
 <header class="nav" id="mainNav">
   <div class="nav-logo" onclick="goTo('home')">
-    <svg width="34" height="34" viewBox="0 0 34 34" fill="none">
-      <circle cx="17" cy="17" r="16" fill="rgba(15,118,110,.3)" stroke="rgba(34,211,238,.6)" stroke-width="1.2"/>
-      <path d="M9 22L14.5 11L18.5 19L22 13L26 22" stroke="#22D3EE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-      <circle cx="14.5" cy="11" r="1.8" fill="#22D3EE"/>
-    </svg>
-    <span class="nav-wordmark">Voltbit</span>
+  <a href="#" class="nav-logo">
+    <img src="/voltbit-logo.png" style="height: 60px; width: auto;" alt="VOLTBIT Logo">
+</a>
   </div>
   <ul class="nav-links">
     <li><a data-page="home" onclick="goTo('home')">Home</a></li>
     <li><a data-page="services" onclick="goTo('services')">Services</a></li>
     <li><a data-page="process" onclick="goTo('process')">Process</a></li>
     <li><a data-page="faq" onclick="goTo('faq')">FAQ</a></li>
-    <li><a data-page="contact" onclick="goTo('contact')">Contact</a></li>
+    <li><div class="contact-dropdown"><a data-page="contact" onclick="goTo('contact')">Connect</a><div class="contact-dropdown-menu">
+<div class="social-icons">
+  <a href="https://www.tiktok.com/@v0ltbit?_r=1&_t=ZS-96r5KfHnrkd?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+  <a href="https://instagram.com/voltbit1" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+  <a href="https://www.facebook.com/share/1TT94qsuXK/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+  <a href="mailto:voltbitsoftware@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+</div>
+</div></div></li>
   </ul>
   <button class="nav-cta magnetic" onclick="goTo('contact')">Get a Quote</button>
   <button class="nav-hamburger" id="hbg" aria-label="Menu"><span></span><span></span><span></span></button>
@@ -645,7 +1092,18 @@ details[open] .sum-icon svg{color:#04141b;}
   <a onclick="goTo('services');closeMob()">Services</a>
   <a onclick="goTo('process');closeMob()">Process</a>
   <a onclick="goTo('faq');closeMob()">FAQ</a>
-  <a onclick="goTo('contact');closeMob()">Contact</a>
+  <div class="mob-connect-wrap">
+    <button class="mob-connect-btn" onclick="toggleMobSocial(event)">
+      Connect
+      <span class="mob-chev-line"></span>
+    </button>
+    <div class="mob-social-drop" id="mobSocialDrop">
+      <a href="https://www.tiktok.com/@voltbit.tech?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener noreferrer" onclick="closeMob()"><i class="fab fa-tiktok"></i> TikTok</a>
+      <a href="https://instagram.com/voltbit1" target="_blank" rel="noopener noreferrer" onclick="closeMob()"><i class="fab fa-instagram"></i> Instagram</a>
+      <a href="https://www.facebook.com/share/1TT94qsuXK/" target="_blank" rel="noopener noreferrer" onclick="closeMob()"><i class="fab fa-facebook-f"></i> Facebook</a>
+      <a href="mailto:voltbitsoftware@gmail.com" onclick="closeMob()"><i class="fas fa-envelope"></i> Email</a>
+    </div>
+  </div>
   <button class="btn btn-p magnetic" onclick="goTo('contact');closeMob()" style="margin-top:8px;">Get a Quote</button>
 </div>
 
@@ -663,11 +1121,11 @@ details[open] .sum-icon svg{color:#04141b;}
     <div class="hero-content">
       <div class="hero-badge"><div class="badge-dot"></div>Next-Gen Software Engineering · Lusaka, Zambia</div>
       <h1 class="hero-h1">Where Code<br>Builds Power</h1>
-      <p class="hero-p">Voltbit builds simple, powerful, and reliable digital solutions — custom web applications, websites, automation, and business systems for companies that want to grow.</p>
+      <p class="hero-p">VOLTBIT builds simple, powerful, and reliable digital solutions — custom web applications, websites, automation, and business systems for companies that want to grow.</p>
       <div class="hero-btns">
         <button class="btn btn-p magnetic" onclick="goTo('services')">
           <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-          View Our Work
+          View Our Services
         </button>
         <button class="btn btn-g" onclick="goTo('process')">
           Our Process
@@ -677,13 +1135,13 @@ details[open] .sum-icon svg{color:#04141b;}
       <div class="metrics">
         <div class="metric"><h3>99.9%</h3><p>System Uptime</p></div>
         <div class="metric"><h3>24/7</h3><p>Support</p></div>
-        <div class="metric"><h3>AI+</h3><p>Automation</p></div>
+        <div class="metric"><h3>System</h3><p>Automation</p></div>
       </div>
     </div>
 
     <div class="hero-visual">
       <div class="tile tile1"><h4>Cloud Systems</h4><p>Distributed infrastructure solutions.</p></div>
-      <div class="tile tile2"><h4>AI Automation</h4><p>Intelligent automated workflows.</p></div>
+      <div class="tile tile2"><h4>Business Automation</h4><p>Intelligent automated workflows.</p></div>
       <div class="tile tile3"><h4>Cyber Security</h4><p>Enterprise-grade protection systems.</p></div>
       <div class="tile tile4"><h4>Modern UX</h4><p>Premium digital experiences.</p></div>
       <div class="orb">
@@ -703,10 +1161,10 @@ details[open] .sum-icon svg{color:#04141b;}
     <div class="inner">
       <div class="about-grid">
         <div class="stat-box">
-          <p class="stat-quote">"Voltbit is a software development firm dedicated to engineering excellence. Our mission is to empower businesses by transforming complex challenges into robust, secure, and lightning-fast digital realities."</p>
+          <p class="stat-quote">VOLTBIT is a software development firm dedicated to engineering excellence. Our mission is to empower businesses by transforming complex challenges into robust, secure, and lightning-fast digital realities.</p>
           <div class="stats-row">
             <div><div class="stat-n">250+</div><div class="stat-l">Projects Delivered</div></div>
-            <div><div class="stat-n">15+</div><div class="stat-l">Global Awards</div></div>
+  
             <div><div class="stat-n">99.9%</div><div class="stat-l">Uptime Record</div></div>
             <div><div class="stat-n">48</div><div class="stat-l">Core Architects</div></div>
           </div>
@@ -714,7 +1172,7 @@ details[open] .sum-icon svg{color:#04141b;}
         <div>
           <span class="eyebrow">Who We Are</span>
           <h2 class="sec-h2">Practical digital products that solve <em>real challenges</em></h2>
-          <p class="sec-sub">Voltbit designs and develops custom web applications, websites, and business systems that help companies streamline operations, improve customer experiences, and grow online.</p>
+          <p class="sec-sub">VOLTBIT designs and develops custom web applications, websites, and business systems that help companies streamline operations, improve customer experiences, and grow online.</p>
           <div class="checks">
             <div class="check"><div class="chk-ic"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></div><span>Secure &amp; Fast</span></div>
             <div class="check"><div class="chk-ic"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></div><span>Custom Built</span></div>
@@ -747,7 +1205,7 @@ details[open] .sum-icon svg{color:#04141b;}
         <div style="direction:ltr;">
           <div class="val-icon alt"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg></div>
           <h3 class="val-h3">Custom Built</h3>
-          <p class="val-p">Bespoke architecture designed from the ground up to meet your specific business requirements. We don't believe in one-size-fits-all. Every Voltbit product is tailored precisely to your workflow.</p>
+          <p class="val-p">Bespoke architecture designed from the ground up to meet your specific business requirements. We don't believe in one-size-fits-all. Every VOLTBIT product is tailored precisely to your workflow.</p>
           <ul class="val-bullets"><li>Scalable Cloud Integration</li><li>API-First Methodology</li></ul>
         </div>
       </div>
@@ -789,17 +1247,7 @@ details[open] .sum-icon svg{color:#04141b;}
     </div>
   </div>
 
-  <footer class="site-footer">
-    <div class="inner">
-      <div class="footer-g">
-        <div class="footer-brand"><div class="fw" onclick="goTo('home')">Voltbit</div><p>Building the future of software in Lusaka, Zambia. Professional, scalable, and reliable technology solutions.</p></div>
-        <div class="fc"><h4>Services</h4><ul><li onclick="goTo('services')">Software Development</li><li onclick="goTo('services')">Web Design</li><li onclick="goTo('services')">Automation</li><li onclick="goTo('services')">Hosting</li></ul></div>
-        <div class="fc"><h4>Company</h4><ul><li onclick="goTo('home')">Home</li><li onclick="goTo('process')">Process</li><li onclick="goTo('faq')">FAQ</li><li onclick="goTo('contact')">Contact</li></ul></div>
-        <div class="fc"><h4>Connect</h4><ul><li>LinkedIn</li><li>GitHub</li><li>Privacy Policy</li><li>hello@voltbit.com</li></ul></div>
-      </div>
-      <div class="footer-bt"><span>© 2026 Voltbit Engineering. All rights reserved.</span><span>Lusaka, Zambia · Where Code Builds Power</span></div>
-    </div>
-  </footer>
+
 </div>
 
 <!-- ═══════════════════════════════
@@ -810,7 +1258,7 @@ details[open] .sum-icon svg{color:#04141b;}
     <div class="ph-inner">
       <span class="eyebrow">Our Expertise</span>
       <h1 class="ph-h1">Precision-Engineered Software<br/><em>Solutions</em></h1>
-      <p class="ph-sub">Voltbit delivers high-performance digital tools designed to scale with your business. From custom SaaS platforms to seamless integrations, we build the engine of your digital growth.</p>
+      <p class="ph-sub">VOLTBIT delivers high-performance digital tools designed to scale with your business. From custom SaaS platforms to seamless integrations, we build the engine of your digital growth.</p>
       <button class="btn btn-p magnetic" onclick="goTo('contact')">Start a Project</button>
     </div>
   </div>
@@ -873,26 +1321,15 @@ details[open] .sum-icon svg{color:#04141b;}
       <div class="cta-in">
         <span class="eyebrow">Let's Build Together</span>
         <h2 class="cta-h2">Have an Idea? Let's Build It.</h2>
-        <p class="cta-p">Join the businesses scaling their power with Voltbit's modern software engineering. From concept to deployment, we handle everything.</p>
+        <p class="cta-p">Join the businesses scaling their power with VOLTBIT's modern software engineering. From concept to deployment, we handle everything.</p>
         <div class="cta-btns">
           <button class="btn btn-p magnetic" onclick="goTo('contact')">Start a Project</button>
-          <button class="btn btn-g" onclick="goTo('contact')">Contact Us</button>
         </div>
       </div>
     </div>
   </div>
 
-  <footer class="site-footer">
-    <div class="inner">
-      <div class="footer-g">
-        <div class="footer-brand"><div class="fw" onclick="goTo('home')">Voltbit</div><p>Building the future of software in Lusaka, Zambia. Professional, scalable technology solutions.</p></div>
-        <div class="fc"><h4>Services</h4><ul><li onclick="goTo('services')">Software Development</li><li onclick="goTo('services')">Web Design</li><li onclick="goTo('services')">Automation</li><li onclick="goTo('services')">Hosting</li></ul></div>
-        <div class="fc"><h4>Company</h4><ul><li onclick="goTo('home')">Home</li><li onclick="goTo('process')">Process</li><li onclick="goTo('faq')">FAQ</li><li onclick="goTo('contact')">Contact</li></ul></div>
-        <div class="fc"><h4>Connect</h4><ul><li>LinkedIn</li><li>GitHub</li><li>Privacy Policy</li><li>hello@voltbit.com</li></ul></div>
-      </div>
-      <div class="footer-bt"><span>© 2026 Voltbit Engineering. All rights reserved.</span><span>Lusaka, Zambia · Where Code Builds Power</span></div>
-    </div>
-  </footer>
+
 </div>
 
 <!-- ═══════════════════════════════
@@ -947,26 +1384,15 @@ details[open] .sum-icon svg{color:#04141b;}
       <div class="cta-in">
         <span class="eyebrow">Let's Build Together</span>
         <h2 class="cta-h2">Have an Idea? Let's Build It.</h2>
-        <p class="cta-p">Experience our structured process firsthand. Join the industry leaders who trust Voltbit for their digital power.</p>
+        <p class="cta-p">Experience our structured process firsthand. Join the industry leaders who trust VOLTBIT for their digital power.</p>
         <div class="cta-btns">
           <button class="btn btn-p magnetic" onclick="goTo('contact')">Start a Project</button>
-          <button class="btn btn-g" onclick="goTo('contact')">Contact Us</button>
         </div>
       </div>
     </div>
   </div>
 
-  <footer class="site-footer">
-    <div class="inner">
-      <div class="footer-g">
-        <div class="footer-brand"><div class="fw" onclick="goTo('home')">Voltbit</div><p>Building the future of software in Lusaka, Zambia. Professional, scalable technology solutions.</p></div>
-        <div class="fc"><h4>Services</h4><ul><li onclick="goTo('services')">Software Development</li><li onclick="goTo('services')">Web Design</li><li onclick="goTo('services')">Automation</li><li onclick="goTo('services')">Hosting</li></ul></div>
-        <div class="fc"><h4>Company</h4><ul><li onclick="goTo('home')">Home</li><li onclick="goTo('process')">Process</li><li onclick="goTo('faq')">FAQ</li><li onclick="goTo('contact')">Contact</li></ul></div>
-        <div class="fc"><h4>Connect</h4><ul><li>LinkedIn</li><li>GitHub</li><li>Privacy Policy</li><li>hello@voltbit.com</li></ul></div>
-      </div>
-      <div class="footer-bt"><span>© 2026 Voltbit Engineering. All rights reserved.</span><span>Lusaka, Zambia · Where Code Builds Power</span></div>
-    </div>
-  </footer>
+
 </div>
 
 <!-- ═══════════════════════════════
@@ -984,24 +1410,24 @@ details[open] .sum-icon svg{color:#04141b;}
   <section class="sec glass">
     <div class="inner">
       <div class="faq-layout">
-        <div>
+        </div>
+        <div class="faq-list">
           <span class="eyebrow">Got Questions</span>
           <h2 class="sec-h2">Common <em>Questions</em></h2>
+          <details open><summary>Typical Project Timelines<div class="sum-icon"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg></div></summary><div class="faq-ans">Project timelines vary depending on scope and complexity. Smaller projects like landing pages take 2–4 weeks, while larger custom systems require 2–6 months. We use agile methodology to deliver functional MVP versions within the first 6–8 weeks so you can begin testing and providing feedback early.</div></details>
+          <details><summary>Post-Launch Support &amp; Maintenance<div class="sum-icon"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg></div></summary><div class="faq-ans">We offer comprehensive maintenance packages including 24/7 server monitoring, security patches, routine updates, and monthly performance audits. Our team remains your technical partner long after deployment, providing bug fixes and feature enhancements as your business evolves.</div></details>
+          <details><summary>SaaS Architecture &amp; Scalability<div class="sum-icon"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg></div></summary><div class="faq-ans">Our SaaS solutions are built on cloud-native architectures designed for infinite scalability. We implement multi-tenant databases and containerized deployments to ensure your platform remains responsive as your user base grows from hundreds to millions.</div></details>
+          <details><summary>Legacy System Improvements<div class="sum-icon"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg></div></summary><div class="faq-ans">We specialize in modernizing outdated systems through incremental refactoring or complete cloud migration. By integrating modern APIs and optimizing database queries, we breathe new life into your existing infrastructure while reducing operational costs.</div></details>
+          <details><summary>Do you build SaaS products?<div class="sum-icon"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg></div></summary><div class="faq-ans">Yes. We design and develop scalable SaaS products, customer portals, and subscription-based systems from the ground up — including billing integration, user authentication, multi-tenancy, and everything needed to launch a professional software product.</div></details>
+          <details><summary>Where is VOLTBIT based?<div class="sum-icon"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg></div></summary><div class="faq-ans">VOLTBIT is based in Lusaka, Zambia. We serve clients locally across Zambia as well as businesses internationally, delivering high-performance digital solutions with the professional reliability your business deserves.</div></details>
+        </div>
+        <div>
           <p class="sec-sub">Can't find what you're looking for? Reach out directly and we'll get back to you within one business day.</p>
           <div class="faq-promo">
             <h4>Still have questions?</h4>
             <p>Our team is ready to discuss your project and answer any specific questions about what we build.</p>
             <button class="btn btn-p" onclick="goTo('contact')" style="font-size:13px;padding:11px 22px;">Talk to Us</button>
           </div>
-        </div>
-        <div class="faq-list">
-          <details open><summary>Typical Project Timelines<div class="sum-icon"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg></div></summary><div class="faq-ans">Project timelines vary depending on scope and complexity. Smaller projects like landing pages take 2–4 weeks, while larger custom systems require 2–6 months. We use agile methodology to deliver functional MVP versions within the first 6–8 weeks so you can begin testing and providing feedback early.</div></details>
-          <details><summary>Post-Launch Support &amp; Maintenance<div class="sum-icon"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg></div></summary><div class="faq-ans">We offer comprehensive maintenance packages including 24/7 server monitoring, security patches, routine updates, and monthly performance audits. Our team remains your technical partner long after deployment, providing bug fixes and feature enhancements as your business evolves.</div></details>
-          <details><summary>SaaS Architecture &amp; Scalability<div class="sum-icon"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg></div></summary><div class="faq-ans">Our SaaS solutions are built on cloud-native architectures designed for infinite scalability. We implement multi-tenant databases and containerized deployments (Docker/Kubernetes) to ensure your platform remains responsive as your user base grows from hundreds to millions.</div></details>
-          <details><summary>Legacy System Improvements<div class="sum-icon"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg></div></summary><div class="faq-ans">We specialize in modernizing outdated systems through incremental refactoring or complete cloud migration. By integrating modern APIs and optimizing database queries, we breathe new life into your existing infrastructure while reducing operational costs.</div></details>
-          <details><summary>Do you build SaaS products?<div class="sum-icon"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg></div></summary><div class="faq-ans">Yes. We design and develop scalable SaaS products, customer portals, and subscription-based systems from the ground up — including billing integration, user authentication, multi-tenancy, and everything needed to launch a professional software product.</div></details>
-          <details><summary>Where is Voltbit based?<div class="sum-icon"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg></div></summary><div class="faq-ans">Voltbit is based in Lusaka, Zambia. We serve clients locally across Zambia as well as businesses internationally, delivering high-performance digital solutions with the professional reliability your business deserves.</div></details>
-        </div>
       </div>
     </div>
   </section>
@@ -1041,17 +1467,7 @@ details[open] .sum-icon svg{color:#04141b;}
     </div>
   </div>
 
-  <footer class="site-footer">
-    <div class="inner">
-      <div class="footer-g">
-        <div class="footer-brand"><div class="fw" onclick="goTo('home')">Voltbit</div><p>Building the future of software in Lusaka, Zambia. Professional, scalable technology solutions.</p></div>
-        <div class="fc"><h4>Services</h4><ul><li onclick="goTo('services')">Software Development</li><li onclick="goTo('services')">Web Design</li><li onclick="goTo('services')">Automation</li><li onclick="goTo('services')">Hosting</li></ul></div>
-        <div class="fc"><h4>Company</h4><ul><li onclick="goTo('home')">Home</li><li onclick="goTo('process')">Process</li><li onclick="goTo('faq')">FAQ</li><li onclick="goTo('contact')">Contact</li></ul></div>
-        <div class="fc"><h4>Connect</h4><ul><li>LinkedIn</li><li>GitHub</li><li>Privacy Policy</li><li>hello@voltbit.com</li></ul></div>
-      </div>
-      <div class="footer-bt"><span>© 2026 Voltbit Engineering. All rights reserved.</span><span>Lusaka, Zambia · Where Code Builds Power</span></div>
-    </div>
-  </footer>
+
 </div>
 
 <!-- ═══════════════════════════════
@@ -1071,27 +1487,62 @@ details[open] .sum-icon svg{color:#04141b;}
       <div class="contact-grid">
         <div class="form-card">
           <h3 class="form-title">Start a Project</h3>
-          <div class="form-row">
-            <div class="fg"><label>Full Name</label><input type="text" placeholder="John Doe"/></div>
-            <div class="fg"><label>Email Address</label><input type="email" placeholder="john@example.com"/></div>
+
+          <!-- Formspree success message -->
+          <div data-fs-success class="fs-success" style="display:none;">
+            <div class="fs-success-inner">
+              <div class="fs-success-icon">
+                <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="#22d3ee" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              </div>
+              <h4>Message Sent!</h4>
+              <p>Thanks for reaching out.<br/>We'll get back to you within one business day.</p>
+              <button class="fs-success-back" onclick="document.querySelector('[data-fs-success]').style.display='none'; document.getElementById('voltbit-contact-form').style.display='block'; document.getElementById('voltbit-contact-form').reset();">Send Another Message</button>
+            </div>
           </div>
-          <div class="fg"><label>Company (Optional)</label><input type="text" placeholder="Your company or organisation"/></div>
-          <div class="fg"><label>Service Needed</label>
-            <select>
-              <option value="" disabled selected>Select a service…</option>
-              <option>Software &amp; Web Applications</option>
-              <option>Website &amp; Online Presence</option>
-              <option>Automation &amp; Integrations</option>
-              <option>UI/UX &amp; Graphic Design</option>
-              <option>Hosting &amp; Maintenance</option>
-              <option>Other / Not Sure</option>
-            </select>
-          </div>
-          <div class="fg"><label>Project Details</label><textarea placeholder="Tell us about your idea, goals, timeline, and any specific requirements…"></textarea></div>
-          <button class="btn btn-p btn-full magnetic" type="button">
-            <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
-            Send Message
-          </button>
+
+          <!-- Formspree global error -->
+          <div data-fs-error class="fs-global-error" style="display:none;"></div>
+
+          <form id="voltbit-contact-form">
+            <div class="form-row">
+              <div class="fg">
+                <label for="fc-name">Full Name</label>
+                <input id="fc-name" type="text" name="name" placeholder="John Doe" data-fs-field required/>
+                <span class="fs-field-error" data-fs-error="name"></span>
+              </div>
+              <div class="fg">
+                <label for="fc-email">Email Address</label>
+                <input id="fc-email" type="email" name="email" placeholder="john@example.com" data-fs-field required/>
+                <span class="fs-field-error" data-fs-error="email"></span>
+              </div>
+            </div>
+            <div class="fg">
+              <label for="fc-company">Company (Optional)</label>
+              <input id="fc-company" type="text" name="company" placeholder="Your company or organisation"/>
+            </div>
+            <div class="fg">
+              <label for="fc-service">Service Needed</label>
+              <select id="fc-service" name="service" data-fs-field required>
+                <option value="" disabled selected>Select a service…</option>
+                <option>Software &amp; Web Applications</option>
+                <option>Website &amp; Online Presence</option>
+                <option>Automation &amp; Integrations</option>
+                <option>UI/UX &amp; Graphic Design</option>
+                <option>Hosting &amp; Maintenance</option>
+                <option>Other / Not Sure</option>
+              </select>
+              <span class="fs-field-error" data-fs-error="service"></span>
+            </div>
+            <div class="fg">
+              <label for="fc-details">Project Details</label>
+              <textarea id="fc-details" name="message" placeholder="Tell us about your idea, goals, timeline, and any specific requirements…" data-fs-field required></textarea>
+              <span class="fs-field-error" data-fs-error="message"></span>
+            </div>
+            <button class="btn btn-p btn-full magnetic" type="submit" data-fs-submit-btn>
+              <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+              <span class="btn-label">Send Message</span>
+            </button>
+          </form>
         </div>
         <div>
           <div class="info-badge">
@@ -1099,58 +1550,48 @@ details[open] .sum-icon svg{color:#04141b;}
             Based in Lusaka, Zambia
           </div>
           <h2 class="info-h2">Let's talk about your project</h2>
-          <p class="info-p">Reach out via email, WhatsApp, or the form. We respond to all enquiries within one business day and would love to hear about your vision.</p>
-          <div class="contact-item">
+          <p class="info-p">Reach out via email or the form. We respond to all enquiries within one business day and would love to hear about your vision.</p>
+          <a class="contact-item" href="mailto:voltbitsoftware@gmail.com" style="text-decoration:none;">
             <div class="ci-icon"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></div>
-            <div><div class="ci-label">Email</div><div class="ci-value">hello@voltbit.com</div></div>
+            <div><div class="ci-label">Email</div><div class="ci-value">voltbitsoftware@gmail.com</div></div>
             <div class="ci-arrow"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></div>
-          </div>
-          <div class="contact-item">
-            <div class="ci-icon"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg></div>
-            <div><div class="ci-label">WhatsApp</div><div class="ci-value">Message Voltbit</div></div>
-            <div class="ci-arrow"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></div>
-          </div>
+          </a>
           <div class="location-card">
             <div class="loc-ic"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div>
             <div><div class="loc-label">Our Base</div><div class="loc-val">Lusaka, Zambia</div></div>
-          </div>
-          <div class="map-box">
-            <div class="map-grid-bg"></div>
-            <div class="map-pin">
-              <div class="map-pin-dot"></div>
-              <div class="map-pin-label">Voltbit HQ</div>
-              <div class="map-pin-sub">Lusaka, Zambia</div>
-            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
+
+</div>
+
   <footer class="site-footer">
     <div class="inner">
       <div class="footer-g">
-        <div class="footer-brand"><div class="fw" onclick="goTo('home')">Voltbit</div><p>Building the future of software in Lusaka, Zambia. Professional, scalable technology solutions.</p></div>
+        <div class="footer-brand"><div class="fw" onclick="goTo('home')" style="cursor:pointer;"><img src="/voltbit-logo.png" style="height:48px;width:auto;" alt="VOLTBIT Logo"></div><p>Building the future of software. Professional, scalable, and reliable technology solutions.</p></div>
         <div class="fc"><h4>Services</h4><ul><li onclick="goTo('services')">Software Development</li><li onclick="goTo('services')">Web Design</li><li onclick="goTo('services')">Automation</li><li onclick="goTo('services')">Hosting</li></ul></div>
         <div class="fc"><h4>Company</h4><ul><li onclick="goTo('home')">Home</li><li onclick="goTo('process')">Process</li><li onclick="goTo('faq')">FAQ</li><li onclick="goTo('contact')">Contact</li></ul></div>
-        <div class="fc"><h4>Connect</h4><ul><li>LinkedIn</li><li>GitHub</li><li>Privacy Policy</li><li>hello@voltbit.com</li></ul></div>
-      </div>
-      <div class="footer-bt"><span>© 2026 Voltbit Engineering. All rights reserved.</span><span>Lusaka, Zambia · Where Code Builds Power</span></div>
-    </div>
-  </footer>
+        <div class="fc"><h4>Connect</h4>
+
+<div class="social-icons">
+  <a href="https://www.tiktok.com/@v0ltbit?_r=1&_t=ZS-96r5KfHnrkd?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+  <a href="https://instagram.com/voltbit1" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+  <a href="https://www.facebook.com/share/1TT94qsuXK/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+  <a href="mailto:voltbitsoftware@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
 </div>
 
-<!-- BOTTOM NAV (mobile) -->
-<nav class="bnav" id="bottomNav">
-  <div class="bn active" data-page="home" onclick="goTo('home')"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg><span>Home</span></div>
-  <div class="bn" data-page="services" onclick="goTo('services')"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg><span>Services</span></div>
-  <div class="bn" data-page="process" onclick="goTo('process')"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg><span>Process</span></div>
-  <div class="bn" data-page="contact" onclick="goTo('contact')"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg><span>Contact</span></div>
-</nav>
+</div>
+      </div>
+      <div class="footer-bt"><span>© 2026 VOLTBIT Software. All rights reserved.</span><span>Lusaka, Zambia · Where Code Builds Power</span></div>
+    </div>
+  </footer>
 
 <script>
 /* ── Routing ── */
-function goTo(page) {
+function goTo(page, pushState = true) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.getElementById('page-' + page).classList.add('active');
   window.scrollTo(0,0);
@@ -1160,7 +1601,21 @@ function goTo(page) {
   document.querySelectorAll('.bn').forEach(b => {
     b.classList.toggle('active', b.dataset.page === page);
   });
+  if (pushState) history.pushState({ page }, '', '#' + page);
 }
+
+// Restore page on load from hash
+(function() {
+  const hash = window.location.hash.replace('#', '');
+  const valid = ['home','services','process','faq','contact'];
+  goTo(valid.includes(hash) ? hash : 'home', false);
+})();
+
+// Handle browser back/forward
+window.addEventListener('popstate', function(e) {
+  const page = (e.state && e.state.page) || 'home';
+  goTo(page, false);
+});
 
 /* ── Hamburger ── */
 document.getElementById('hbg').addEventListener('click', () => document.getElementById('mob').classList.add('open'));
@@ -1191,6 +1646,56 @@ document.querySelectorAll('.magnetic').forEach(btn => {
     btn.style.transform = 'translate(0,0)';
   });
 });
+
+function toggleMobSocial(e) {
+  e.stopPropagation();
+  const drop = document.getElementById('mobSocialDrop');
+  const btn = e.currentTarget;
+  drop.classList.toggle('open');
+  btn.classList.toggle('open');
+}
 </script>
+
+  <script>
+    document.getElementById('voltbit-contact-form').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const form = this;
+      const btn = form.querySelector('[data-fs-submit-btn]');
+      const btnLabel = btn.querySelector('.btn-label');
+      const successBox = document.querySelector('[data-fs-success]');
+      const errorBox = document.querySelector('[data-fs-error]');
+
+      errorBox.style.display = 'none';
+      errorBox.textContent = '';
+      btn.disabled = true;
+      btnLabel.textContent = 'Sending…';
+
+      try {
+        const res = await fetch('https://formspree.io/f/mgoqrkjd', {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (res.ok) {
+          form.style.display = 'none';
+          successBox.style.display = 'block';
+        } else {
+          const json = await res.json().catch(() => ({}));
+          const msg = (json.errors && json.errors.map(err => err.message).join(', ')) || 'Something went wrong. Please try again.';
+          errorBox.textContent = msg;
+          errorBox.style.display = 'block';
+          btn.disabled = false;
+          btnLabel.textContent = 'Send Message';
+        }
+      } catch (err) {
+        errorBox.textContent = 'Network error — please check your connection and try again.';
+        errorBox.style.display = 'block';
+        btn.disabled = false;
+        btnLabel.textContent = 'Send Message';
+      }
+    });
+  </script>
+
 </body>
 </html>
